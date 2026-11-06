@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Contact Admissions & Campus Visit Location | Apex Institute</title>
+  <meta name="description"
+    content="Contact Apex Nursing & Paramedical Institute admissions directorate, book a guided simulation lab tour, view live Google campus map, and connect with counselors.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/images/logo/brand-logo.jpg">
+  <link rel="apple-touch-icon" href="assets/images/logo/brand-logo.jpg">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind Config (Loaded after CDN for class-based dark mode) -->
+  <script src="assets/js/tailwind-config.js"></script>
+
+  <!-- External Clean Stylesheets (Zero Inline CSS) -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body class="bg-white dark:bg-black text-slate-900 dark:text-white transition-colors duration-200">
+
+  <!-- ==========================================================================
+       BRANDED PRELOADER
+       ========================================================================== -->
+  <div id="preloader" role="status" aria-label="Loading Institute Portal">
+    <div class="loader-pulse-ring">
+      <img src="assets/images/logo/brand-logo.jpg" alt="Institute Emblem" class="loader-logo-img">
+    </div>
+    <div class="loader-track">
+      <div class="loader-progress"></div>
+    </div>
+    <p class="loader-text font-heading">Apex Nursing &amp; Paramedical</p>
+  </div>
+
+  <!-- ==========================================================================
+       GLOBAL SLIM FIXED HEADER (64px desktop / 58px mobile)
+       ========================================================================== -->
+  <header class="global-header">
+    <div class="header-container">
+
+      <!-- Brand Identity (Single Line) -->
+      <a href="index.html" class="flex items-center gap-2.5 shrink-0 group py-1"
+        aria-label="Apex Nursing and Paramedical Institute Home">
+        <img src="assets/images/logo/brand-logo.jpg" alt="Apex Logo"
+          class="brand-logo-img w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-slate-200 dark:border-neutral-700 object-cover shadow-sm transition-transform duration-200 group-hover:scale-105">
+        <div class="flex flex-col">
+          <span
+            class="brand-title font-heading font-extrabold text-sm sm:text-base tracking-tight text-slate-900 dark:text-white leading-none">
+            APEX <span class="text-sky-600 dark:text-sky-400">INSTITUTE</span>
+          </span>
+          <span class="brand-subtitle text-[10px] font-medium text-slate-600 dark:text-slate-400 leading-tight">
+            Nursing &amp; Paramedical Sciences
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation: Exactly 6 Nav Items (Single Line) -->
+      <nav class="desktop-nav-group items-center" aria-label="Primary Navigation">
+        <ul class="header-nav-list list-none m-0 p-0">
+
+          <!-- Item 1: Home with CLICK-ONLY Dropdown -->
+          <li class="dropdown-wrapper">
+            <button type="button" class="nav-link dropdown-toggle-btn gap-1 inline-flex items-center"
+              aria-haspopup="true" aria-expanded="false" id="home-dropdown-btn">
+              <span>Home</span>
+              <svg class="w-3.5 h-3.5 transition-transform duration-200" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="dropdown-panel" aria-labelledby="home-dropdown-btn" role="menu">
+              <a href="index.html" class="dropdown-item" role="menuitem">
+                <span class="w-2 h-2 rounded-full bg-sky-600 mr-2"></span>
+                <span>Home 1 (Clinical Campus)</span>
+              </a>
+              <a href="home-2.html" class="dropdown-item" role="menuitem">
+                <span class="w-2 h-2 rounded-full bg-rose-600 mr-2"></span>
+                <span>Home 2 (Paramedical Research)</span>
+              </a>
+            </div>
+          </li>
+
+          <!-- Item 2: About -->
+          <li>
+            <a href="about.html" class="nav-link">About</a>
+          </li>
+
+          <!-- Item 3: Courses (Active on this page) -->
+          <li>
+            <a href="courses.html" class="nav-link">Courses</a>
+          </li>
+
+          <!-- Item 4: Facilities -->
+          <li>
+            <a href="facilities.html" class="nav-link">Facilities</a>
+          </li>
+
+          <!-- Item 5: Contact -->
+          <li>
+            <a href="contact.html" class="nav-link active">Contact</a>
+          </li>
+
+          <!-- Item 7: Student Dashboard -->
+          <li>
+            <a href="dashboard.html" class="nav-link font-medium">Dashboard</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Desktop Header Controls: RTL/LTR, Dark Mode, Student Login Button -->
+      <div class="desktop-nav-group items-center gap-2">
+
+        <!-- RTL/LTR Toggle Button -->
+        <button type="button" class="dir-toggle-btn utility-btn p-1.5 px-2 text-xs font-semibold rounded-md transition"
+          aria-label="Toggle Text Direction">
+          <span class="dir-label-text">RTL</span>
+        </button>
+
+        <!-- Dark Mode Toggle Button -->
+        <button type="button" class="theme-toggle-btn utility-btn p-1.5 rounded-md transition"
+          aria-label="Toggle Dark Mode">
+          <svg class="theme-sun-icon w-4 h-4" style="display:none;" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+            </path>
+          </svg>
+          <svg class="theme-moon-icon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+          </svg>
+        </button>
+
+        <!-- Student Portal Login Button (Replacing generic CTA) -->
+        <a href="login.html"
+          class="header-action-btn inline-flex items-center justify-center text-xs font-bold bg-sky-700 hover:bg-sky-800 text-white px-3.5 py-1.5 rounded-md shadow-sm transition-all focus:ring-2 focus:ring-sky-500"
+          aria-label="Student Portal Login">
+          Login
+        </a>
+      </div>
+
+      <!-- Mobile Menu Trigger Button -->
+      <div class="mobile-menu-trigger flex lg:hidden items-center gap-1.5">
+        <button type="button" id="mobile-menu-open-btn"
+          class="p-2 rounded-md text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-neutral-800 focus:outline-none"
+          aria-label="Open Navigation Menu" aria-expanded="false">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       MOBILE MENU DRAWER & BACKDROP
+       ========================================================================== -->
+  <div id="mobile-menu-backdrop" class="mobile-backdrop" aria-hidden="true"></div>
+
+  <aside id="mobile-menu-drawer" class="mobile-menu-drawer" role="dialog" aria-modal="true"
+    aria-label="Mobile Navigation Menu">
+    <div class="p-4 border-b border-slate-200 dark:border-neutral-800 flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <img src="assets/images/logo/brand-logo.jpg" alt="Apex Logo"
+          class="w-9 h-9 rounded-full border border-slate-200 dark:border-neutral-700 object-cover">
+        <div>
+          <p class="font-heading font-extrabold text-sm text-slate-900 dark:text-white leading-tight">
+            APEX INSTITUTE
+          </p>
+          <p class="text-[10px] text-slate-500 dark:text-slate-400">
+            Nursing &amp; Paramedical Sciences
+          </p>
+        </div>
+      </div>
+      <button type="button" id="mobile-menu-close-btn"
+        class="p-1.5 rounded-md text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-neutral-800"
+        aria-label="Close Mobile Navigation">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer Settings (Dark Mode & RTL) -->
+    <div
+      class="p-3 bg-slate-50 dark:bg-neutral-900 border-b border-slate-200 dark:border-neutral-800 flex items-center justify-between">
+      <span class="text-xs font-medium text-slate-600 dark:text-slate-400">Settings:</span>
+      <div class="flex items-center gap-2">
+        <button type="button" class="dir-toggle-btn utility-btn px-2.5 py-1 text-xs font-semibold rounded transition"
+          aria-label="Toggle Direction">
+          <span class="dir-label-text">RTL</span>
+        </button>
+        <button type="button" class="theme-toggle-btn utility-btn p-1.5 rounded transition"
+          aria-label="Toggle Dark Mode">
+          <svg class="theme-sun-icon w-4 h-4" style="display:none;" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+            </path>
+          </svg>
+          <svg class="theme-moon-icon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+        <!-- Mobile Nav Links -->
+    <nav class="flex-1 p-4 overflow-y-auto" aria-label="Mobile Navigation Links">
+      <ul class="space-y-1">
+        <!-- Mobile Accordion for Home -->
+        <li class="mobile-accordion-wrapper">
+          <button type="button"
+            class="mobile-accordion-toggle w-full flex items-center justify-between p-2.5 text-sm font-semibold rounded-md text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-neutral-900 transition"
+            aria-expanded="false">
+            <span>Home</span>
+            <svg class="accordion-chevron-icon w-4 h-4 transition-transform duration-200 text-slate-400" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="mobile-accordion-content space-y-1">
+            <a href="index.html" class="mobile-sub-link">
+              Home 1 (Clinical Campus)
+            </a>
+            <a href="home-2.html" class="mobile-sub-link">
+              Home 2 (Paramedical Research)
+            </a>
+          </div>
+        </li>
+
+        <li>
+          <a href="about.html" class="mobile-nav-link">
+            About
+          </a>
+        </li>
+        <li>
+          <a href="courses.html" class="mobile-nav-link">
+            Courses
+          </a>
+        </li>
+        <li>
+          <a href="facilities.html" class="mobile-nav-link">
+            Facilities
+          </a>
+        </li>
+        <li>
+          <a href="contact.html" class="mobile-nav-link">
+            Contact
+          </a>
+        </li>
+        <li>
+          <a href="dashboard.html" class="mobile-nav-link">
+            Dashboard
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Mobile Drawer Footer with Student Portal Button -->
+    <div class="p-4 border-t border-slate-200 dark:border-neutral-800">
+      <a href="login.html"
+        class="w-full flex items-center justify-center py-2.5 px-4 text-xs font-bold rounded-lg bg-sky-700 hover:bg-sky-800 text-white shadow-sm transition">
+        Login
+      </a>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       MAIN CONTENT: EXACTLY 5 CONTENT SECTIONS (INNER PAGE REQUIREMENT)
+       ========================================================================== -->
+
+  <!-- ==========================================================================
+       MAIN CONTENT: EXACTLY 5 CONTENT SECTIONS (INNER PAGE REQUIREMENT)
+       ========================================================================== -->
+  <main>
+
+    <!-- ==========================================================================
+         SECTION 1: HERO — ADMISSIONS DIRECTORATE & CAMPUS VISIT COORDINATION
+         Layout: Full Background Image + Balanced Scrim (Identical Height Across Inner Pages)
+         ========================================================================== -->
+    <section class="inner-page-hero border-b border-slate-200 dark:border-neutral-800">
+
+      <!-- High-Res Background Image with Balanced Scrim -->
+      <div class="absolute inset-0">
+        <img src="assets/images/contact/p58.jpg" alt="Apex Institute Campus Directorate"
+          class="w-full h-full object-cover">
+        <div class="hero-bg-scrim"></div>
+      </div>
+
+      <!-- Foreground Content on Image -->
+      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center on-image-white">
+        <div
+          class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] sm:text-xs font-bold bg-sky-500/25 border border-sky-400/40 text-sky-200 mb-3 shadow-sm backdrop-blur-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping shrink-0"></span>
+          <span>Admissions Directorate &bull; Mon&ndash;Sat 9 AM &ndash; 6 PM</span>
+        </div>
+
+        <h1
+          class="font-heading font-extrabold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white tracking-tight leading-snug sm:leading-tight mb-3 drop-shadow-md">
+          Connect With Our <span class="text-sky-300">Admissions Directorate</span> &amp; Campus Team.
+        </h1>
+
+        <p class="text-xs sm:text-sm text-slate-100 max-w-2xl mx-auto mb-5 leading-relaxed font-normal drop-shadow">
+          Connect with our counselors for instant seat eligibility verification and guided campus lab visits.
+        </p>
+
+        <!-- 3 Quick Contact Coordinates Badges Overlaid on Hero -->
+        <div class="flex flex-wrap justify-center gap-2 sm:gap-3 max-w-xl mx-auto">
+          <a href="tel:+914428479000"
+            class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-black/45 border border-white/20 text-[11px] sm:text-xs font-bold text-white hover:border-sky-400 transition backdrop-blur-sm shadow-sm">
+            <svg class="w-3.5 h-3.5 text-sky-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+              </path>
+            </svg>
+            <span>+91 44 2847 9000</span>
+          </a>
+
+          <a href="https://wa.me/919840123456" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-black/45 border border-white/20 text-[11px] sm:text-xs font-bold text-white hover:border-emerald-400 transition backdrop-blur-sm shadow-sm">
+            <svg class="w-3.5 h-3.5 text-emerald-300" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.043.072.043.419-.101.824z">
+              </path>
+            </svg>
+            <span>WhatsApp: +91 98401 23456</span>
+          </a>
+
+          <a href="mailto:admissions@apex.edu.in"
+            class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-black/45 border border-white/20 text-[11px] sm:text-xs font-bold text-white hover:border-sky-400 transition backdrop-blur-sm shadow-sm">
+            <svg class="w-3.5 h-3.5 text-sky-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+              </path>
+            </svg>
+            <span>admissions@apex.edu.in</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ==========================================================================
+         SECTION 3: INTERACTIVE ADMISSION COUNSELING & CAMPUS VISIT FORM
+         Layout: Distinct 2-Column Split (Counseling Checklist + Responsive Form)
+         ========================================================================== -->
+    <section class="section-padding bg-white dark:bg-black border-b border-slate-200 dark:border-neutral-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+
+          <!-- Left Details: Counseling Benefits & Application Instructions -->
+          <div class="lg:col-span-5 space-y-6">
+            <div>
+              <span class="clinical-badge mb-3">Online Application Desk</span>
+              <h2
+                class="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-slate-900 dark:text-white tracking-tight">
+                Schedule Your Counseling &amp; Lab Tour
+              </h2>
+              <p class="text-sm text-slate-800 dark:text-slate-100 mt-2 leading-relaxed">
+                Submit your credentials for instant seat eligibility verification, scholarship evaluation, and a
+                personalized laboratory tour date.
+              </p>
+            </div>
+
+            <!-- 4 Counseling Checklist Points -->
+            <div class="space-y-3.5">
+              <div
+                class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800">
+                <span
+                  class="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 flex items-center justify-center text-xs font-bold">&#10003;</span>
+                <div>
+                  <h4 class="text-xs font-bold text-slate-900 dark:text-white">Zero Application Fee</h4>
+                  <p class="text-[11px] text-slate-700 dark:text-slate-300">Initial academic counseling and syllabus
+                    review are 100% complimentary.</p>
+                </div>
+              </div>
+
+              <div
+                class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800">
+                <span
+                  class="flex-shrink-0 w-6 h-6 rounded-full bg-sky-100 dark:bg-sky-950/80 text-sky-600 dark:text-sky-400 flex items-center justify-center text-xs font-bold">&#10003;</span>
+                <div>
+                  <h4 class="text-xs font-bold text-slate-900 dark:text-white">Merit Scholarship Screening</h4>
+                  <p class="text-[11px] text-slate-700 dark:text-slate-300">Candidates scoring 80%+ in 10+2 science are
+                    evaluated for tuition fee waivers.</p>
+                </div>
+              </div>
+
+              <div
+                class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800">
+                <span
+                  class="flex-shrink-0 w-6 h-6 rounded-full bg-purple-100 dark:bg-purple-950/80 text-purple-600 dark:text-purple-400 flex items-center justify-center text-xs font-bold">&#10003;</span>
+                <div>
+                  <h4 class="text-xs font-bold text-slate-900 dark:text-white">Gaumard &amp; Anatomage Hands-on Demo
+                  </h4>
+                  <p class="text-[11px] text-slate-700 dark:text-slate-300">Experience a 30-minute live demonstration on
+                    computerized patient simulators.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Direct Admissions Support Card -->
+            <div
+              class="p-4 rounded-xl bg-sky-50 dark:bg-sky-950/60 border border-sky-200 dark:border-sky-800/80 text-xs">
+              <span class="font-bold text-sky-800 dark:text-sky-300 block mb-1">Instant WhatsApp Assistance</span>
+              <p class="text-slate-700 dark:text-slate-300 mb-2">Have quick questions about eligibility or documents
+                required? Chat directly with an admissions officer.</p>
+              <a href="https://wa.me/919840123456" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 font-bold text-emerald-600 dark:text-emerald-400 hover:underline">
+                <span>Start WhatsApp Chat &rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Admission Counseling Form -->
+          <div class="lg:col-span-7">
+            <div
+              class="p-6 sm:p-8 rounded-2xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 shadow-lg">
+
+              <div class="border-b border-slate-200 dark:border-neutral-800 pb-4 mb-6">
+                <h3 class="font-heading font-bold text-xl text-slate-900 dark:text-white">
+                  Admission Inquiry &amp; Campus Visit Request
+                </h3>
+                <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">
+                  Fill in your details below. Our admissions directorate will contact you within 2 working hours.
+                </p>
+              </div>
+
+              <!-- Form Element -->
+              <form action="#" method="POST" class="space-y-4">
+
+                <!-- 2-Col Input Row: Full Name & Mobile -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="contact-name" class="block text-xs font-bold text-slate-900 dark:text-white mb-1.5">
+                      Full Name <span class="text-rose-500">*</span>
+                    </label>
+                    <input type="text" id="contact-name" name="name" required placeholder="e.g. Priya Sundaram"
+                      class="w-full px-3.5 py-2.5 rounded-lg text-xs bg-slate-50 dark:bg-black border border-slate-300 dark:border-neutral-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500 transition">
+                  </div>
+
+                  <div>
+                    <label for="contact-phone" class="block text-xs font-bold text-slate-900 dark:text-white mb-1.5">
+                      Mobile Number <span class="text-rose-500">*</span>
+                    </label>
+                    <input type="tel" id="contact-phone" name="phone" required placeholder="e.g. +91 98400 12345"
+                      class="w-full px-3.5 py-2.5 rounded-lg text-xs bg-slate-50 dark:bg-black border border-slate-300 dark:border-neutral-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500 transition">
+                  </div>
+                </div>
+
+                <!-- 2-Col Input Row: Email & Academic Stream -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label for="contact-email" class="block text-xs font-bold text-slate-900 dark:text-white mb-1.5">
+                      Email Address <span class="text-rose-500">*</span>
+                    </label>
+                    <input type="email" id="contact-email" name="email" required placeholder="e.g. priya@example.com"
+                      class="w-full px-3.5 py-2.5 rounded-lg text-xs bg-slate-50 dark:bg-black border border-slate-300 dark:border-neutral-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500 transition">
+                  </div>
+
+                  <div>
+                    <label for="contact-stream" class="block text-xs font-bold text-slate-900 dark:text-white mb-1.5">
+                      10+2 Stream / Qualification <span class="text-rose-500">*</span>
+                    </label>
+                    <select id="contact-stream" name="stream" required
+                      class="w-full px-3.5 py-2.5 rounded-lg text-xs bg-slate-50 dark:bg-black border border-slate-300 dark:border-neutral-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500 transition">
+                      <option value="">Select Qualification</option>
+                      <option value="12-pcb">10+2 Science (Physics, Chemistry, Biology)</option>
+                      <option value="12-pcm">10+2 Science (Physics, Chemistry, Maths)</option>
+                      <option value="12-other">10+2 Arts / Commerce (Eligible for GNM)</option>
+                      <option value="diploma">Diploma in Paramedical Sciences</option>
+                      <option value="graduate">Bachelor Degree Graduate</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Program of Interest Dropdown -->
+                <div>
+                  <label for="contact-program" class="block text-xs font-bold text-slate-900 dark:text-white mb-1.5">
+                    Program of Interest <span class="text-rose-500">*</span>
+                  </label>
+                  <select id="contact-program" name="program" required
+                    class="w-full px-3.5 py-2.5 rounded-lg text-xs bg-slate-50 dark:bg-black border border-slate-300 dark:border-neutral-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500 transition">
+                    <option value="">Select Clinical Degree or Diploma Track</option>
+                    <option value="bsc-nursing">B.Sc. Nursing (4-Year Full-Time Degree)</option>
+                    <option value="bmlt">B.Sc. Medical Laboratory Technology - BMLT (4-Year Degree)</option>
+                    <option value="ott">B.Sc. Operation Theatre &amp; Anaesthesia Tech (4-Year Degree)</option>
+                    <option value="brit">B.Sc. Radiology &amp; Imaging Technology - BRIT (4-Year Degree)</option>
+                    <option value="cardiac">B.Sc. Cardiac Care Technology (4-Year Degree)</option>
+                    <option value="dialysis">B.Sc. Dialysis &amp; Renal Technology (4-Year Degree)</option>
+                    <option value="gnm">General Nursing &amp; Midwifery - GNM (3-Year Diploma)</option>
+                    <option value="trauma">Diploma in Emergency &amp; Trauma Care Tech (2-Year Diploma)</option>
+                  </select>
+                </div>
+
+                <!-- Campus Tour Request Checkbox -->
+                <div
+                  class="p-3 rounded-lg bg-slate-50 dark:bg-black/60 border border-slate-200 dark:border-neutral-800 flex items-start gap-2.5">
+                  <input type="checkbox" id="contact-tour" name="schedule_tour"
+                    class="mt-0.5 rounded text-sky-600 focus:ring-sky-500 dark:bg-neutral-800 dark:border-neutral-700">
+                  <label for="contact-tour" class="text-xs text-slate-800 dark:text-slate-200">
+                    <span class="font-bold text-slate-900 dark:text-white block">Schedule an in-person Guided Simulation
+                      Lab Walkthrough</span>
+                    <span>Reserve a slot to tour our Gaumard ICU pods, NABL pathology labs, and 3D Anatomage suite with
+                      our faculty directors.</span>
+                  </label>
+                </div>
+
+                <!-- Specific Questions Textarea -->
+                <div>
+                  <label for="contact-message" class="block text-xs font-bold text-slate-900 dark:text-white mb-1.5">
+                    Specific Queries / Preferred Visit Date
+                  </label>
+                  <textarea id="contact-message" name="message" rows="3"
+                    placeholder="Tell us about your academic background, preferred batch timing, or hostel accommodation requirements..."
+                    class="w-full px-3.5 py-2.5 rounded-lg text-xs bg-slate-50 dark:bg-black border border-slate-300 dark:border-neutral-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-sky-500 transition resize-none"></textarea>
+                </div>
+
+                <!-- Submit Button & Security Note -->
+                <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3">
+                  <button type="submit"
+                    class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3 rounded-lg text-xs font-bold bg-sky-700 hover:bg-sky-800 text-white shadow-md transition">
+                    <span>Submit Admission Inquiry</span>
+                    <svg class="w-4 h-4 rtl-flip" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                      aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                  </button>
+                  <div class="flex items-center gap-1.5 text-[11px] text-slate-500 dark:text-slate-400">
+                    <svg class="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor"
+                      viewBox="0 0 24 24" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                      </path>
+                    </svg>
+                    <span>SSL 256-Bit Encrypted Data Submission</span>
+                  </div>
+                </div>
+
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 4: GOOGLE LIVE CAMPUS MAP & REGIONAL TRANSIT COORDINATES
+         Layout: Distinct Live Map Frame with 4-Card Regional Transit Matrix
+         ========================================================================== -->
+    <section class="section-padding section-light-alternate border-b border-slate-200 dark:border-neutral-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <span class="clinical-badge mb-3">Campus Location &amp; Directions</span>
+          <h2
+            class="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-slate-900 dark:text-white tracking-tight">
+            Interactive Live Campus Map &amp; Transit Hubs
+          </h2>
+          <p class="text-sm sm:text-base text-slate-800 dark:text-slate-100 mt-2 leading-relaxed">
+            Located in Chennai's Medical Enclave, directly accessible via metro, railway, and city bus corridors.
+          </p>
+        </div>
+
+        <!-- Google Live Map Frame Container -->
+        <div
+          class="rounded-2xl overflow-hidden border border-slate-200 dark:border-neutral-800 shadow-lg mb-10 bg-slate-100 dark:bg-neutral-900">
+          <div class="relative w-full h-80 sm:h-96 md:h-[420px]">
+            <iframe title="Apex Nursing &amp; Paramedical Training Institute Campus Location"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124414.28821946059!2d80.14662757134375!3d13.003975005898808!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267d32c0137b9%3A0xe54d65be6b4b4458!2sChennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              class="w-full h-full border-0" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+          <div
+            class="p-4 bg-white dark:bg-neutral-900 border-t border-slate-200 dark:border-neutral-800 flex flex-wrap items-center justify-between gap-3 text-xs">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+              <span class="font-bold text-slate-900 dark:text-white">Apex Campus Coordinates:</span>
+              <span class="text-slate-700 dark:text-slate-300">Healthcare Campus Road, Sector 8, Medical Enclave,
+                Chennai</span>
+            </div>
+            <a href="https://maps.google.com/?q=Chennai+Medical+Enclave" target="_blank" rel="noopener noreferrer"
+              class="font-bold text-sky-700 dark:text-sky-400 hover:underline inline-flex items-center gap-1">
+              <span>Open in Google Maps App</span>
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- 4 Regional Transit Hubs Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 equal-card-grid">
+
+          <!-- Transit 1: Metro -->
+          <div
+            class="equal-card p-5 rounded-xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 shadow-sm flex flex-col justify-between">
+            <div>
+              <div
+                class="w-9 h-9 rounded-lg bg-sky-100 dark:bg-sky-950/80 text-sky-700 dark:text-sky-400 flex items-center justify-center font-bold mb-3">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M8 7h8m-8 5h8m-4 5h4M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"></path>
+                </svg>
+              </div>
+              <h4 class="font-heading font-bold text-sm text-slate-900 dark:text-white mb-1">Metro Transit</h4>
+              <p class="text-xs text-slate-700 dark:text-slate-300 mb-2">AG-DMS &amp; Guindy Metro Station corridors.
+              </p>
+            </div>
+            <span class="text-[11px] font-bold text-sky-700 dark:text-sky-400">10 Mins via Feeder Shuttle</span>
+          </div>
+
+          <!-- Transit 2: Railway -->
+          <div
+            class="equal-card p-5 rounded-xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 shadow-sm flex flex-col justify-between">
+            <div>
+              <div
+                class="w-9 h-9 rounded-lg bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400 flex items-center justify-center font-bold mb-3">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </div>
+              <h4 class="font-heading font-bold text-sm text-slate-900 dark:text-white mb-1">Railway Terminal</h4>
+              <p class="text-xs text-slate-700 dark:text-slate-300 mb-2">Chennai Central &amp; Egmore Junction hubs.</p>
+            </div>
+            <span class="text-[11px] font-bold text-emerald-600 dark:text-emerald-400">15 Mins Direct Auto / Bus</span>
+          </div>
+
+          <!-- Transit 3: Airport -->
+          <div
+            class="equal-card p-5 rounded-xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 shadow-sm flex flex-col justify-between">
+            <div>
+              <div
+                class="w-9 h-9 rounded-lg bg-rose-100 dark:bg-rose-950/80 text-rose-700 dark:text-rose-400 flex items-center justify-center font-bold mb-3">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                </svg>
+              </div>
+              <h4 class="font-heading font-bold text-sm text-slate-900 dark:text-white mb-1">Airport (MAA)</h4>
+              <p class="text-xs text-slate-700 dark:text-slate-300 mb-2">Chennai International Airport via GST Road.</p>
+            </div>
+            <span class="text-[11px] font-bold text-rose-600 dark:text-rose-400">25 Mins via Metro Direct</span>
+          </div>
+
+          <!-- Transit 4: Bus Transit -->
+          <div
+            class="equal-card p-5 rounded-xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 shadow-sm flex flex-col justify-between">
+            <div>
+              <div
+                class="w-9 h-9 rounded-lg bg-purple-100 dark:bg-purple-950/80 text-purple-700 dark:text-purple-400 flex items-center justify-center font-bold mb-3">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0">
+                  </path>
+                </svg>
+              </div>
+              <h4 class="font-heading font-bold text-sm text-slate-900 dark:text-white mb-1">MTC Public Bus</h4>
+              <p class="text-xs text-slate-700 dark:text-slate-300 mb-2">Direct bus stops at Campus Main Gates 1 &amp;
+                2.</p>
+            </div>
+            <span class="text-[11px] font-bold text-purple-600 dark:text-purple-400">Routes 18, 23C, 29B, 54</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         SECTION 4: DEPARTMENTAL ADMISSIONS DIRECTORY & VISITING HOURS
+         Layout: 4-Column Card Grid with Direct Extensions & Timings
+         ========================================================================== -->
+    <section
+      class="section-padding bg-slate-50 dark:bg-neutral-900/60 border-b border-slate-200 dark:border-neutral-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+          <span class="clinical-badge mb-3">Campus Directory</span>
+          <h2
+            class="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-slate-900 dark:text-white tracking-tight">
+            Admissions Directorate &amp; Departmental Helpdesk
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 mt-2">
+            Direct office contact points and counseling hours for prospective students, parents, and healthcare
+            recruiters.
+          </p>
+        </div>
+
+        <!-- 4-Card Directory Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <!-- Card 1: Academic Counseling -->
+          <div
+            class="p-5 rounded-2xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 shadow-sm hover:border-sky-500 transition">
+            <span class="inline-block p-2 rounded-lg bg-sky-100 dark:bg-sky-950/60 text-sky-700 dark:text-sky-400 mb-3">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                </path>
+              </svg>
+            </span>
+            <h3 class="font-heading font-bold text-base text-slate-900 dark:text-white mb-1">Nursing Admissions</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mb-3">B.Sc. Nursing &amp; GNM statutory eligibility and
+              verification.</p>
+            <div
+              class="pt-3 border-t border-slate-200 dark:border-neutral-800 text-xs text-slate-700 dark:text-slate-300 space-y-1">
+              <p><span class="font-semibold text-slate-900 dark:text-white">Ext:</span> 101 / 102</p>
+              <p><span class="font-semibold text-slate-900 dark:text-white">Hours:</span> 9:00 AM – 5:30 PM</p>
+            </div>
+          </div>
+
+          <!-- Card 2: Paramedical Diagnostics -->
+          <div
+            class="p-5 rounded-2xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 shadow-sm hover:border-emerald-500 transition">
+            <span
+              class="inline-block p-2 rounded-lg bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 mb-3">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z">
+                </path>
+              </svg>
+            </span>
+            <h3 class="font-heading font-bold text-base text-slate-900 dark:text-white mb-1">Paramedical Sciences</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mb-3"> BRIT, and Dialysis technology admissions
+              counseling.</p>
+            <div
+              class="pt-3 border-t border-slate-200 dark:border-neutral-800 text-xs text-slate-700 dark:text-slate-300 space-y-1">
+              <p><span class="font-semibold text-slate-900 dark:text-white">Ext:</span> 204 / 205</p>
+              <p><span class="font-semibold text-slate-900 dark:text-white">Hours:</span> 9:00 AM – 5:30 PM</p>
+            </div>
+          </div>
+
+          <!-- Card 3: Clinical Postings & Placements -->
+          <div
+            class="p-5 rounded-2xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 shadow-sm hover:border-indigo-500 transition">
+            <span
+              class="inline-block p-2 rounded-lg bg-indigo-100 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-400 mb-3">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                </path>
+              </svg>
+            </span>
+            <h3 class="font-heading font-bold text-base text-slate-900 dark:text-white mb-1">Clinical Placement Cell
+            </h3>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mb-3">Hospital MoUs, bedside postings, and recruiter
+              appointments.</p>
+            <div
+              class="pt-3 border-t border-slate-200 dark:border-neutral-800 text-xs text-slate-700 dark:text-slate-300 space-y-1">
+              <p><span class="font-semibold text-slate-900 dark:text-white">Ext:</span> 308</p>
+              <p><span class="font-semibold text-slate-900 dark:text-white">Hours:</span> 9:00 AM – 6:00 PM</p>
+            </div>
+          </div>
+
+          <!-- Card 4: International Licensure Desk -->
+          <div
+            class="p-5 rounded-2xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 shadow-sm hover:border-rose-500 transition">
+            <span
+              class="inline-block p-2 rounded-lg bg-rose-100 dark:bg-rose-950/60 text-rose-700 dark:text-rose-400 mb-3">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                </path>
+              </svg>
+            </span>
+            <h3 class="font-heading font-bold text-base text-slate-900 dark:text-white mb-1">Global Mobility Desk</h3>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mb-3">UK NMC CBT/OSCE, US NCLEX-RN, and German language
+              bridge.</p>
+            <div
+              class="pt-3 border-t border-slate-200 dark:border-neutral-800 text-xs text-slate-700 dark:text-slate-300 space-y-1">
+              <p><span class="font-semibold text-slate-900 dark:text-white">Ext:</span> 412</p>
+              <p><span class="font-semibold text-slate-900 dark:text-white">Hours:</span> 10:00 AM – 6:00 PM</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================================================
+         SECTION 5: EMERGENCY 24/7 CLINICAL HOTLINE & RAPID ADMISSION DESK (MANDATORY CTA)
+         Layout: Distinct Command Banner with High-Contrast Helplines
+         ========================================================================== -->
+    <section
+      class="section-padding cta-banner-theme relative overflow-hidden border-t border-slate-200 dark:border-neutral-800">
+
+      <div class="absolute inset-0 overflow-hidden">
+        <img src="assets/images/about/p59.jpg" alt="Clinical Admissions Helpdesk Background"
+          class="w-full h-full object-cover">
+        <div class="cta-bg-scrim"></div>
+      </div>
+
+      <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 on-image-white text-center">
+        <div class="space-y-4">
+          <div class="flex justify-center">
+            <span
+              class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-sky-700 text-white shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+              <span class="text-white">Admissions Directorate Hotline Active &bull; Academic Year 2026-27</span>
+            </span>
+          </div>
+
+          <h2
+            class="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl tracking-tight leading-tight max-w-3xl mx-auto">
+            Ready to Begin Your Healthcare Journey at Apex Institute?
+          </h2>
+
+          <p class="text-sm sm:text-base max-w-2xl mx-auto leading-relaxed text-slate-100">
+            Our admissions counselors are available to assist with eligibility verification, fees, and campus hostels.
+          </p>
+
+          <div class="flex flex-wrap items-center justify-center gap-4 pt-3">
+            <a href="tel:+914428479000"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-bold bg-sky-700 hover:bg-sky-800 text-white shadow-lg transition">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                </path>
+              </svg>
+              <span>Call Admissions: +91 44 2847 9000</span>
+            </a>
+
+            <a href="dashboard.html"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-bold bg-black/40 hover:bg-black/60 text-white border border-white/30 backdrop-blur-sm shadow-md transition">
+              <svg class="w-4 h-4 text-sky-600 dark:text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1">
+                </path>
+              </svg>
+              <span>Access Student Dashboard</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==========================================================================
+       GLOBAL SHARED FOOTER
+       ========================================================================== -->
+  <footer class="global-footer pt-14 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="footer-grid pb-12 border-b border-slate-800">
+
+        <!-- Column 1: Brand Info & Accreditation -->
+        <div>
+          <a href="index.html" aria-label="Apex Institute Home" class="flex items-center gap-3 mb-4">
+            <img src="assets/images/logo/brand-logo.jpg" alt="Apex Logo"
+              class="w-11 h-11 rounded-full border border-slate-300 dark:border-slate-700 object-cover shadow-sm">
+            <div>
+              <span
+                class="font-heading font-extrabold text-base text-slate-900 dark:text-white footer-title tracking-tight block">
+                APEX INSTITUTE
+              </span>
+              <span class="text-xs text-sky-700 dark:text-sky-400 font-semibold">
+                Nursing &amp; Paramedical Sciences
+              </span>
+            </div>
+          </a>
+          <p class="text-xs text-slate-700 dark:text-slate-200 leading-relaxed mb-4 max-w-sm">
+            Recognized by INC &amp; State Paramedical Faculty. Empowering next-generation nurses, clinical lab
+            technologists, operation theatre specialists, and emergency paramedics through world-class simulation labs
+            and hospital tie-ups.
+          </p>
+          <div class="flex items-center gap-2 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 mb-4">
+            <span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span>Admissions Open for Academic Year 2026-27</span>
+          </div>
+
+          <!-- Social Media Icons -->
+          <div class="flex items-center gap-2.5">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+              aria-label="Follow Apex Institute on Facebook"
+              class="w-8 h-8 rounded-full border border-slate-300 dark:border-neutral-700 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:border-sky-600 transition shadow-sm">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+              aria-label="Follow Apex Institute on Instagram"
+              class="w-8 h-8 rounded-full border border-slate-300 dark:border-neutral-700 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-rose-600 dark:hover:text-rose-400 hover:border-rose-600 transition shadow-sm">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+              aria-label="Follow Apex Institute on LinkedIn"
+              class="w-8 h-8 rounded-full border border-slate-300 dark:border-neutral-700 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-sky-700 dark:hover:text-sky-400 hover:border-sky-700 transition shadow-sm">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
+                </path>
+              </svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"
+              aria-label="Subscribe to Apex Institute on YouTube"
+              class="w-8 h-8 rounded-full border border-slate-300 dark:border-neutral-700 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-red-600 dark:hover:text-red-400 hover:border-red-600 transition shadow-sm">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z">
+                </path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Navigation Links -->
+        <div>
+          <h4
+            class="font-heading font-bold text-sm text-slate-900 dark:text-white footer-heading uppercase tracking-wider mb-4">
+            Quick Links
+          </h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="index.html" class="hover:text-sky-600 dark:hover:text-sky-400 transition">Home (Campus 1)</a>
+            </li>
+            <li><a href="home-2.html" class="hover:text-sky-600 dark:hover:text-sky-400 transition">Home 2
+                (Research)</a></li>
+            <li><a href="about.html" class="hover:text-sky-600 dark:hover:text-sky-400 transition">About Institute</a>
+            </li>
+            <li><a href="courses.html"
+                class="hover:text-sky-600 dark:hover:text-sky-400 transition font-bold text-sky-700 dark:text-sky-400">Academic
+                Programs</a></li>
+            <li><a href="facilities.html" class="hover:text-sky-600 dark:hover:text-sky-400 transition">Clinical
+                Facilities</a></li>
+
+            <li><a href="contact.html"
+                class="hover:text-sky-600 dark:hover:text-sky-400 transition font-bold text-sky-700 dark:text-sky-400">Admissions
+                &amp; Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Paramedical Departments -->
+        <div>
+          <h4
+            class="font-heading font-bold text-sm text-slate-900 dark:text-white footer-heading uppercase tracking-wider mb-4">
+            Departments
+          </h4>
+          <ul class="space-y-2 text-xs text-slate-700 dark:text-slate-200">
+            <li><a href="courses.html" class="hover:text-sky-600 dark:hover:text-sky-400 transition">B.Sc. Nursing &amp; GNM</a></li>
+            <li><a href="courses.html" class="hover:text-sky-600 dark:hover:text-sky-400 transition">Medical Lab Tech (BMLT/DMLT)</a></li>
+            <li><a href="courses.html" class="hover:text-sky-600 dark:hover:text-sky-400 transition">Operation Theatre &amp; Anaesthesia</a></li>
+            <li><a href="courses.html" class="hover:text-sky-600 dark:hover:text-sky-400 transition">Radiology &amp; Imaging Tech (BRIT)</a></li>
+            <li><a href="courses.html" class="hover:text-sky-600 dark:hover:text-sky-400 transition">Dialysis &amp; Cardiac Care Tech</a></li>
+            <li><a href="courses.html" class="hover:text-sky-600 dark:hover:text-sky-400 transition">Emergency &amp; Trauma Care</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact & Emergency Desk -->
+        <div>
+          <h4
+            class="font-heading font-bold text-sm text-slate-900 dark:text-white footer-heading uppercase tracking-wider mb-4">
+            Campus Desk
+          </h4>
+          <div class="space-y-2.5 text-xs text-slate-700 dark:text-slate-200">
+            <p class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-sky-600 dark:text-sky-400 shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <span>Healthcare Campus Road, Sector 8, Medical Enclave, Chennai, India</span>
+            </p>
+            <p class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-sky-600 dark:text-sky-400 shrink-0" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                </path>
+              </svg>
+              <span>+91 44 2847 9000 / +91 98401 23456</span>
+            </p>
+            <p class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-sky-600 dark:text-sky-400 shrink-0" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                </path>
+              </svg>
+              <span>admissions@apexnursing.edu.in</span>
+            </p>
+          </div>
+          <div class="mt-4">
+            <a href="dashboard.html"
+              class="inline-flex items-center gap-1 text-xs font-semibold text-sky-700 dark:text-sky-400 hover:underline"><span>Go
+                to Student Dashboard</span><svg class="w-3.5 h-3.5 rtl-flip" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg></a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright & Bottom Line -->
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3">
+        <p>© 2026 Apex Nursing &amp; Paramedical Training Institute. All rights reserved.</p>
+        <p class="flex items-center gap-4">
+          <a href="#" class="hover:underline transition">Privacy Policy</a>
+          <span>|</span>
+          <a href="#" class="hover:underline transition">Terms of Service</a>
+          <span>|</span>
+          <a href="#" class="hover:underline transition">INC Registration</a>
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       SCROLL TO TOP BUTTON
+       ========================================================================== -->
+  <button type="button" id="scroll-to-top" class="scroll-to-top" aria-label="Scroll back to top of page">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+    </svg>
+  </button>
+
+  <!-- External Clean JavaScript (Zero Inline Scripts) -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1217 @@
+/* ==========================================================================
+   Apex Nursing & Paramedical Training Institute - Global Stylesheet
+   Color Palette:
+   - Primary Medical Blue: #0056b3 / #004085
+   - Clinical Emergency Red: #e63946 / #d90429
+   - Health Teal/Cyan: #00b4d8 / #0077b6
+   - Dark Mode Background: #000000 (Strict Requirement)
+   - Fonts: Plus Jakarta Sans (Headings), Inter (Body)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
+
+:root {
+  --font-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --color-primary: #0056b3;
+  --color-primary-dark: #003d80;
+  --color-primary-light: #e8f2fc;
+
+  --color-accent-red: #e63946;
+  --color-accent-red-hover: #c92a37;
+
+  --color-teal: #00b4d8;
+  --color-teal-dark: #0077b6;
+
+  --header-height: 64px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-body);
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #0f172a;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   LIGHT MODE: 100% PURE WHITE BACKGROUND (#FFFFFF) + PURE BLACK TEXT (#000000)
+   ========================================================================== */
+html:not(.dark),
+html:not(.dark) body {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+html:not(.dark) header,
+html:not(.dark) .global-header {
+  background-color: #ffffff !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+}
+
+html:not(.dark) footer,
+html:not(.dark) .global-footer {
+  background-color: #ffffff !important;
+  border-top: 1px solid #e2e8f0 !important;
+  color: #000000 !important;
+}
+
+html:not(.dark) footer h1,
+html:not(.dark) footer h2,
+html:not(.dark) footer h3,
+html:not(.dark) footer h4,
+html:not(.dark) footer h5,
+html:not(.dark) footer h6,
+html:not(.dark) footer span.footer-title,
+html:not(.dark) footer .footer-heading {
+  color: #000000 !important;
+}
+
+html:not(.dark) section,
+html:not(.dark) .section-light-alternate,
+html:not(.dark) .cta-banner-theme {
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #000000 !important;
+}
+
+html:not(.dark) .card-theme,
+html:not(.dark) .bg-white,
+html:not(.dark) .bg-slate-50,
+html:not(.dark) .bg-slate-100,
+html:not(.dark) .bg-card-theme,
+html:not(.dark) .hospital-badge {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #000000 !important;
+}
+
+/* Light mode text colors: deep black by default (without !important so image overlays stay white) */
+html:not(.dark) body,
+html:not(.dark) :is(h1, h2, h3, h4, h5, h6, p, li, .nav-link, .text-slate-900, .text-slate-800, .text-slate-700, .text-slate-600, .text-slate-500, .text-slate-400, .text-slate-300, .text-slate-200) {
+  color: #000000;
+}
+
+/* CRITICAL OVERRIDE: Any text overlaid on images or buttons MUST ALWAYS be 100% Pure Bright White */
+html:not(.dark) .on-image-white,
+html:not(.dark) .on-image-white *,
+html:not(.dark) .overlay-white-text,
+html:not(.dark) .overlay-white-text *,
+html:not(.dark) .text-white,
+html.dark .on-image-white,
+html.dark .on-image-white *,
+html.dark .overlay-white-text,
+html.dark .overlay-white-text *,
+html.dark .text-white,
+html .header-action-btn,
+html .header-action-btn * {
+  color: #ffffff !important;
+}
+
+/* Maintain crisp accent branding in light mode */
+html:not(.dark) .text-sky-600,
+html:not(.dark) .text-sky-700 {
+  color: #0056b3 !important;
+}
+html:not(.dark) .text-rose-600 {
+  color: #d90429 !important;
+}
+html:not(.dark) .text-emerald-600 {
+  color: #059669 !important;
+}
+
+/* Solid action buttons always keep white text for readability */
+.header-action-btn,
+.btn-primary,
+.bg-sky-600,
+.bg-sky-700,
+.bg-rose-600,
+.bg-emerald-600 {
+  color: #ffffff !important;
+}
+.header-action-btn *,
+.btn-primary *,
+.bg-sky-600 *,
+.bg-sky-700 *,
+.bg-rose-600 *,
+.bg-emerald-600 * {
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   BUTTON & INTERACTIVE HOVER CONTRAST ENGINE
+   Completely prevents dark backgrounds on hover in light mode
+   ========================================================================== */
+
+/* 1. Secondary & Outline Buttons (e.g. "View Simulation Labs", "Existing Student Portal Login") */
+.btn-secondary-outline,
+a.btn-secondary-outline,
+button.btn-secondary-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+html:not(.dark) .btn-secondary-outline,
+html:not(.dark) a.btn-secondary-outline,
+html:not(.dark) button.btn-secondary-outline,
+html:not(.dark) :is(a, button)[class*="border-slate-300"],
+html:not(.dark) :is(a, button)[class*="border-slate-200"] {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+html:not(.dark) .btn-secondary-outline:hover,
+html:not(.dark) a.btn-secondary-outline:hover,
+html:not(.dark) button.btn-secondary-outline:hover,
+html:not(.dark) :is(a, button)[class*="border-slate-300"]:hover,
+html:not(.dark) :is(a, button)[class*="border-slate-200"]:hover {
+  background-color: #f1f5f9 !important;
+  color: #0056b3 !important;
+  border-color: #94a3b8 !important;
+}
+
+html:not(.dark) .btn-secondary-outline:hover *,
+html:not(.dark) a.btn-secondary-outline:hover *,
+html:not(.dark) button.btn-secondary-outline:hover *,
+html:not(.dark) :is(a, button)[class*="border-slate-300"]:hover *,
+html:not(.dark) :is(a, button)[class*="border-slate-200"]:hover * {
+  color: #0056b3 !important;
+}
+
+/* In dark mode */
+html.dark .btn-secondary-outline,
+html.dark a.btn-secondary-outline,
+html.dark button.btn-secondary-outline,
+html.dark :is(a, button)[class*="border-slate-300"],
+html.dark :is(a, button)[class*="border-neutral-700"] {
+  background-color: #0a0a0a !important;
+  color: #ffffff !important;
+  border: 1px solid #262626 !important;
+}
+
+html.dark .btn-secondary-outline:hover,
+html.dark a.btn-secondary-outline:hover,
+html.dark button.btn-secondary-outline:hover,
+html.dark :is(a, button)[class*="border-slate-300"]:hover,
+html.dark :is(a, button)[class*="border-neutral-700"]:hover {
+  background-color: #171717 !important;
+  color: #38bdf8 !important;
+  border-color: #404040 !important;
+}
+
+html.dark .btn-secondary-outline:hover *,
+html.dark a.btn-secondary-outline:hover *,
+html.dark button.btn-secondary-outline:hover *,
+html.dark :is(a, button)[class*="border-slate-300"]:hover *,
+html.dark :is(a, button)[class*="border-neutral-700"]:hover * {
+  color: #38bdf8 !important;
+}
+
+/* 2. Header Utility Buttons: RTL Toggle, Theme Toggle, Mobile Toggle */
+.dir-toggle-btn,
+.theme-toggle-btn,
+.utility-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+html:not(.dark) .dir-toggle-btn,
+html:not(.dark) .theme-toggle-btn,
+html:not(.dark) .utility-btn {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+html:not(.dark) .dir-toggle-btn:hover,
+html:not(.dark) .theme-toggle-btn:hover,
+html:not(.dark) .utility-btn:hover {
+  background-color: #f1f5f9 !important;
+  color: #0056b3 !important;
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) .dir-toggle-btn:hover *,
+html:not(.dark) .theme-toggle-btn:hover *,
+html:not(.dark) .utility-btn:hover * {
+  color: #0056b3 !important;
+}
+
+html.dark .dir-toggle-btn,
+html.dark .theme-toggle-btn,
+html.dark .utility-btn {
+  background-color: #0a0a0a !important;
+  color: #ffffff !important;
+  border: 1px solid #262626 !important;
+}
+
+html.dark .dir-toggle-btn:hover,
+html.dark .theme-toggle-btn:hover,
+html.dark .utility-btn:hover {
+  background-color: #171717 !important;
+  color: #38bdf8 !important;
+  border-color: #404040 !important;
+}
+
+html.dark .dir-toggle-btn:hover *,
+html.dark .theme-toggle-btn:hover *,
+html.dark .utility-btn:hover * {
+  color: #38bdf8 !important;
+}
+
+/* 3. Primary action buttons always keep white text */
+.header-action-btn:hover,
+.btn-primary:hover,
+.bg-sky-700:hover,
+.bg-sky-800:hover,
+.bg-rose-700:hover {
+  color: #ffffff !important;
+}
+.header-action-btn:hover *,
+.btn-primary:hover *,
+.bg-sky-700:hover *,
+.bg-sky-800:hover *,
+.bg-rose-700:hover * {
+  color: #ffffff !important;
+}
+
+/* 4. Global Light-Mode Hover Blackout Protection:
+   Ensures that elements carrying dark:hover utility classes never turn dark/black in light mode */
+html:not(.dark) [class*="hover:bg-neutral"]:hover,
+html:not(.dark) [class*="hover:bg-black"]:hover,
+html:not(.dark) [class*="hover:bg-slate-900"]:hover,
+html:not(.dark) [class*="hover:bg-slate-800"]:hover {
+  background-color: #f1f5f9 !important;
+  color: #0056b3 !important;
+}
+
+html:not(.dark) [class*="hover:bg-neutral"]:hover *,
+html:not(.dark) [class*="hover:bg-black"]:hover *,
+html:not(.dark) [class*="hover:bg-slate-900"]:hover *,
+html:not(.dark) [class*="hover:bg-slate-800"]:hover * {
+  color: #0056b3 !important;
+}
+
+html:not(.dark) [class*="hover:bg-neutral"]:hover svg,
+html:not(.dark) [class*="hover:bg-black"]:hover svg {
+  color: #0056b3 !important;
+  stroke: currentColor;
+}
+
+/* ==========================================================================
+   STRICT DARK MODE: 100% PURE BLACK BACKGROUND (#000000) + BRIGHT WHITE TEXT (#FFFFFF)
+   ========================================================================== */
+html.dark,
+html.dark body {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+html.dark header,
+html.dark .global-header {
+  background-color: #000000 !important;
+  border-bottom: 1px solid #262626 !important;
+}
+
+html.dark footer,
+html.dark .global-footer {
+  background-color: #000000 !important;
+  border-top: 1px solid #262626 !important;
+  color: #ffffff !important;
+}
+
+html.dark .mobile-menu-drawer {
+  background-color: #000000 !important;
+  border-color: #262626 !important;
+}
+
+html.dark .dropdown-panel {
+  background-color: #0a0a0a !important;
+  border-color: #262626 !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.9) !important;
+}
+
+html.dark section,
+html.dark .section-light-alternate,
+html.dark .cta-banner-theme {
+  background: #000000 !important;
+  background-color: #000000 !important;
+  border-color: #262626 !important;
+  color: #ffffff !important;
+}
+
+html.dark .card-theme,
+html.dark .bg-card-theme,
+html.dark .bg-white,
+html.dark .bg-slate-50,
+html.dark .bg-slate-100,
+html.dark .hospital-badge {
+  background-color: #0a0a0a !important;
+  border-color: #262626 !important;
+  color: #ffffff !important;
+}
+
+/* Dark mode text colors: bright crisp white */
+html.dark h1,
+html.dark h2,
+html.dark h3,
+html.dark h4,
+html.dark h5,
+html.dark h6,
+html.dark p,
+html.dark a:not(.header-action-btn):not(.btn-solid),
+html.dark li,
+html.dark span:not(.text-sky-400):not(.text-rose-500):not(.text-rose-400):not(.text-emerald-400),
+html.dark .text-slate-900,
+html.dark .text-slate-800,
+html.dark .text-slate-700,
+html.dark .text-slate-600,
+html.dark .text-slate-500,
+html.dark .text-slate-400,
+html.dark .text-slate-300,
+html.dark .text-slate-200 {
+  color: #ffffff !important;
+}
+
+/* Vibrant accents in dark mode */
+html.dark .text-sky-400 {
+  color: #38bdf8 !important;
+}
+html.dark .text-rose-500,
+html.dark .text-rose-400 {
+  color: #f87171 !important;
+}
+html.dark .text-emerald-400 {
+  color: #34d399 !important;
+}
+
+html.dark .border-slate-200,
+html.dark .border-slate-300,
+html.dark .border-slate-700,
+html.dark .border-slate-800,
+html.dark .border-slate-100 {
+  border-color: #262626 !important;
+}
+
+/* ==========================================================================
+   RTL / LTR SYSTEM
+   ========================================================================== */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .dropdown-panel {
+  left: auto !important;
+  right: 0 !important;
+}
+
+[dir="rtl"] .rtl-flip {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .scroll-to-top {
+  right: auto;
+  left: 1.5rem;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+/* ==========================================================================
+   BRANDED PRELOADER
+   ========================================================================== */
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+html.dark #preloader {
+  background-color: #000000;
+}
+
+.loader-pulse-ring {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader-pulse-ring::before {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 3px solid rgba(0, 86, 179, 0.2);
+  border-top-color: var(--color-primary);
+  border-right-color: var(--color-accent-red);
+  animation: loader-spin 1.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) infinite;
+}
+
+@keyframes loader-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader-logo-img,
+.loader-emblem {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  animation: pulse-glow 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+  0% {
+    transform: scale(0.96);
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+}
+
+/* ==========================================================================
+   COMPACT FIXED HEADER
+   ========================================================================== */
+.global-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--header-height);
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e2e8f0;
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.global-header.scrolled {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.08);
+}
+
+html.dark .global-header.scrolled {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.6);
+}
+
+/* Header Content Alignment */
+.header-container {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 640px) {
+  .header-container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Nav Item styling */
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #334155;
+  padding: 0.375rem 0.625rem;
+  border-radius: 0.375rem;
+  transition: all 0.15s ease;
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+  background-color: rgba(0, 86, 179, 0.06);
+}
+
+html.dark .nav-link {
+  color: #e2e8f0;
+}
+
+html.dark .nav-link:hover {
+  color: #38bdf8;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.nav-link.active {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+html.dark .nav-link.active {
+  color: #38bdf8;
+}
+
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0.625rem;
+  right: 0.625rem;
+  height: 2px;
+  background-color: var(--color-primary);
+  border-radius: 9999px;
+}
+
+html.dark .nav-link.active::after {
+  background-color: #38bdf8;
+}
+
+/* Dropdown Menu (Strictly Click-Only) */
+.dropdown-wrapper {
+  position: relative;
+}
+
+.dropdown-panel {
+  display: none;
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  min-width: 220px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  padding: 0.375rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  z-index: 1050;
+  animation: fadeInDropdown 0.2s ease-out forwards;
+}
+
+.dropdown-panel.open {
+  display: block;
+}
+
+@keyframes fadeInDropdown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #334155;
+  border-radius: 0.375rem;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f5f9;
+  color: var(--color-primary);
+}
+
+html.dark .dropdown-item {
+  color: #e2e8f0;
+}
+
+html.dark .dropdown-item:hover {
+  background-color: #171717;
+  color: #38bdf8;
+}
+
+/* ==========================================================================
+   MOBILE MENU DRAWER
+   ========================================================================== */
+.mobile-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1100;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 340px;
+  background-color: #ffffff;
+  z-index: 1110;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
+}
+
+[dir="rtl"] .mobile-menu-drawer {
+  right: auto;
+  left: 0;
+  transform: translateX(-100%);
+}
+
+.mobile-menu-drawer.open {
+  transform: translateX(0);
+}
+
+/* Mobile Accordion & Navigation Links */
+.mobile-nav-link {
+  display: block;
+  padding: 0.625rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  color: #1e293b;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.mobile-nav-link:hover {
+  background-color: #f1f5f9;
+  color: var(--color-primary);
+}
+
+html.dark .mobile-nav-link {
+  color: #f1f5f9;
+}
+
+html.dark .mobile-nav-link:hover {
+  background-color: #171717;
+  color: #38bdf8;
+}
+
+.mobile-nav-link.active {
+  color: var(--color-primary) !important;
+  background-color: #e0f2fe !important;
+  font-weight: 700 !important;
+}
+
+html.dark .mobile-nav-link.active {
+  color: #38bdf8 !important;
+  background-color: rgba(56, 189, 248, 0.15) !important;
+}
+
+/* Mobile Accordion Toggle Active State */
+.mobile-accordion-toggle {
+  transition: all 0.15s ease;
+}
+
+.mobile-accordion-toggle.active {
+  color: var(--color-primary) !important;
+  background-color: #f0f9ff !important;
+  font-weight: 700 !important;
+}
+
+html.dark .mobile-accordion-toggle.active {
+  color: #38bdf8 !important;
+  background-color: rgba(56, 189, 248, 0.12) !important;
+}
+
+.mobile-accordion-toggle.active .accordion-chevron-icon {
+  color: var(--color-primary) !important;
+}
+
+html.dark .mobile-accordion-toggle.active .accordion-chevron-icon {
+  color: #38bdf8 !important;
+}
+
+/* Mobile Sub-Links */
+.mobile-sub-link {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #475569;
+  border-radius: 0.375rem;
+  text-decoration: none;
+  transition: all 0.15s ease;
+}
+
+.mobile-sub-link:hover {
+  color: var(--color-primary);
+  background-color: #f1f5f9;
+}
+
+html.dark .mobile-sub-link {
+  color: #94a3b8;
+}
+
+html.dark .mobile-sub-link:hover {
+  color: #38bdf8;
+  background-color: #171717;
+}
+
+.mobile-sub-link.active {
+  color: var(--color-primary) !important;
+  font-weight: 700 !important;
+  background-color: #e0f2fe !important;
+}
+
+html.dark .mobile-sub-link.active {
+  color: #38bdf8 !important;
+  background-color: rgba(56, 189, 248, 0.2) !important;
+}
+
+/* Desktop Dropdown Active State */
+.dropdown-item.active {
+  color: var(--color-primary) !important;
+  font-weight: 700 !important;
+  background-color: #f0f9ff !important;
+}
+
+html.dark .dropdown-item.active {
+  color: #38bdf8 !important;
+  background-color: rgba(56, 189, 248, 0.15) !important;
+}
+
+.mobile-accordion-content {
+  display: none;
+  padding-left: 1rem;
+  padding-top: 0.25rem;
+}
+
+[dir="rtl"] .mobile-accordion-content {
+  padding-left: 0;
+  padding-right: 1rem;
+}
+
+.mobile-accordion-content.open {
+  display: block;
+}
+
+/* ==========================================================================
+   SCROLL TO TOP
+   ========================================================================== */
+.scroll-to-top {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 86, 179, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: all 0.25s ease;
+  z-index: 900;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-to-top:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-2px);
+}
+
+html.dark .scroll-to-top {
+  background-color: #0284c7;
+}
+
+html.dark .scroll-to-top:hover {
+  background-color: #0369a1;
+}
+
+/* ==========================================================================
+   GLOBAL UTILITY & ACCESSIBILITY
+   ========================================================================== */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+html.dark :focus-visible {
+  outline-color: #38bdf8;
+}
+
+.skip-to-content {
+  position: absolute;
+  top: -40px;
+  left: 1rem;
+  background: var(--color-primary);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  z-index: 10000;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  transition: top 0.2s ease;
+}
+
+.skip-to-content:focus {
+  top: 1rem;
+}
+
+
+
+/* ==========================================================================
+   HOME 1 & INNER PAGE SHARED SECTION STYLES
+   ========================================================================== */
+.section-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (max-width: 767px) {
+  .section-padding {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+}
+
+.clinical-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background-color: rgba(0, 86, 179, 0.08);
+  color: var(--color-primary);
+  border: 1px solid rgba(0, 86, 179, 0.18);
+}
+
+html.dark .clinical-badge {
+  background-color: rgba(0, 180, 216, 0.12);
+  color: #38bdf8;
+  border-color: rgba(0, 180, 216, 0.3);
+}
+
+.clinical-badge-red {
+  background-color: rgba(230, 57, 70, 0.08);
+  color: var(--color-accent-red);
+  border-color: rgba(230, 57, 70, 0.2);
+}
+
+html.dark .clinical-badge-red {
+  background-color: rgba(230, 57, 70, 0.18);
+  color: #f87171;
+  border-color: rgba(230, 57, 70, 0.35);
+}
+
+/* Equal Height Card Constraints */
+.equal-card-grid {
+  display: grid;
+  align-items: stretch;
+}
+
+.equal-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Image Hover Dynamics */
+.image-zoom-container {
+  overflow: hidden;
+  border-radius: 0.75rem;
+}
+
+.image-zoom-target {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.image-zoom-container:hover .image-zoom-target {
+  transform: scale(1.04);
+}
+
+/* Hospital Partner Badges */
+.hospital-badge {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  padding: 0.875rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: #1e293b;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+html.dark .hospital-badge {
+  background: #0d0d0d;
+  border-color: #262626;
+  color: #f8fafc;
+}
+
+.hospital-badge:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 86, 179, 0.12);
+}
+
+html.dark .hospital-badge:hover {
+  border-color: #38bdf8;
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.15);
+}
+
+/* ==========================================================================
+   UNIFIED INNER PAGE HERO SPECIFICATION
+   Matches user requirement: Except for Home pages, Section 1 of all remaining
+   pages (About, Courses, Facilities, Placements, Contact) has the exact same height
+   ========================================================================== */
+.inner-page-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 520px;
+  height: 60vh;
+  height: 60dvh;
+  max-height: 620px;
+  overflow: hidden;
+  padding: calc(var(--header-height, 64px) + 1.5rem) 1rem 2.5rem;
+}
+
+@media (max-width: 1024px) {
+  .inner-page-hero {
+    min-height: 480px;
+    height: 55vh;
+    height: 55dvh;
+    padding: calc(var(--header-height, 64px) + 1.25rem) 1rem 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .inner-page-hero {
+    min-height: 440px;
+    height: auto;
+    padding-top: calc(var(--header-height, 64px) + 1.75rem);
+    padding-bottom: 2.25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    overflow: visible;
+  }
+}
+
+/* Full Viewport Hero for Home 2 */
+.home-viewport-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: calc(100vh - 4rem);
+  min-height: calc(100dvh - 4rem);
+  overflow: hidden;
+  padding: 2.5rem 1rem;
+}
+
+/* Home 1 fills the viewport below the fixed header, but can grow for tall content. */
+.home1-hero {
+  display: flex;
+  align-items: center;
+  min-height: calc(100vh - 4rem);
+  min-height: calc(100dvh - 4rem);
+}
+
+@media (max-width: 640px) {
+  .home-viewport-hero {
+    min-height: calc(100vh - 58px);
+    height: auto;
+    padding-top: calc(var(--header-height, 64px) + 1.75rem);
+    padding-bottom: 2.25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    overflow: visible;
+  }
+}
+
+
+/* Hero Background Scrim: High-Res Image Clearly Visible + Bright White Legible Text */
+.hero-bg-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(15, 23, 42, 0.92) 0%, rgba(15, 23, 42, 0.60) 50%, rgba(15, 23, 42, 0.75) 100%);
+  pointer-events: none;
+}
+
+html.dark .hero-bg-scrim {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.65) 50%, rgba(0, 0, 0, 0.82) 100%);
+}
+
+/* CTA Background Scrim: Medical Scene Clearly Visible + Sharp White Text */
+.cta-bg-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.90) 0%, rgba(15, 23, 42, 0.74) 60%, rgba(15, 23, 42, 0.84) 100%);
+  pointer-events: none;
+}
+
+html.dark .cta-bg-scrim {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.80) 60%, rgba(0, 0, 0, 0.88) 100%);
+}
+
+/* ==========================================================================
+   HERO & CTA OVERLAID SECTIONS: IMAGE & WHITE TEXT CONTRAST PROTECTION
+   Ensures that in both Light Mode and Dark Mode, background images are clearly visible
+   and all overlaid titles, descriptions, and badges remain pure, bright, legible white.
+   Only applies to sections with dark image overlays (.inner-page-hero and .cta-banner-theme).
+   ========================================================================== */
+html:not(.dark) .inner-page-hero,
+html:not(.dark) .cta-banner-theme {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+.inner-page-hero,
+.cta-banner-theme {
+  color: #ffffff !important;
+}
+
+.inner-page-hero h1,
+.inner-page-hero h2,
+.inner-page-hero h3,
+.inner-page-hero p,
+.cta-banner-theme h2,
+.cta-banner-theme h3,
+.cta-banner-theme p {
+  color: #ffffff !important;
+}
+
+.inner-page-hero .on-image-white,
+.inner-page-hero .on-image-white *,
+.cta-banner-theme .on-image-white,
+.cta-banner-theme .on-image-white * {
+  color: #ffffff !important;
+}
+
+
+
+
+/* Dashboard Dynamic Progress Widths (Clean zero-inline-style standard) */
+.bar-w-79 { width: 78.8%; }
+.bar-w-100 { width: 100%; }
+.bar-w-91 { width: 91.4%; }
+.bar-w-88 { width: 87.5%; }
+.bar-w-50 { width: 50%; }
+
+
+/* High-Contrast Card Spec Borders & Dividers */
+.equal-card .border-t,
+[class*="border-t border-slate-"] {
+  border-top-color: #cbd5e1 !important; /* slate-300 high-contrast */
+}
+.dark .equal-card .border-t,
+.dark [class*="border-t border-slate-"],
+.dark [class*="border-t border-neutral-"] {
+  border-top-color: #383838 !important; /* neutral-700 */
+}
+
+/* Card Spec Chip Containers */
+.equal-card [class*="bg-slate-50"],
+.equal-card [class*="bg-slate-100"] {
+  border: 1px solid #cbd5e1 !important; /* crisp visible border */
+}
+.dark .equal-card [class*="bg-slate-50"],
+.dark .equal-card [class*="bg-slate-100"],
+.dark .equal-card [class*="bg-neutral-800"] {
+  border: 1px solid #404040 !important;
+}

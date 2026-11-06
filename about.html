@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>About Institute | Apex Nursing &amp; Paramedical Training Institute</title>
+  <meta name="description"
+    content="Discover Apex Nursing &amp; Paramedical Training Institute: INC accredited, 25-year legacy, premier hospital clinical tie-ups, high-fidelity ICU simulation labs, and dual-pedagogy healthcare training.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/images/logo/brand-logo.jpg">
+  <link rel="apple-touch-icon" href="assets/images/logo/brand-logo.jpg">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind Config (Loaded after CDN for class-based dark mode) -->
+  <script src="assets/js/tailwind-config.js"></script>
+
+  <!-- External Clean Stylesheets (Zero Inline CSS) -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body class="bg-white dark:bg-black text-slate-900 dark:text-white transition-colors duration-200">
+
+  <!-- ==========================================================================
+       BRANDED PRELOADER
+       ========================================================================== -->
+  <div id="preloader" role="status" aria-label="Loading Institute Portal">
+    <div class="loader-pulse-ring">
+      <img src="assets/images/logo/brand-logo.jpg" alt="Institute Emblem" class="loader-logo-img">
+    </div>
+    <div class="loader-track">
+      <div class="loader-progress"></div>
+    </div>
+    <p class="loader-text font-heading">Apex Nursing &amp; Paramedical</p>
+  </div>
+
+  <!-- ==========================================================================
+       GLOBAL SLIM FIXED HEADER (64px desktop / 58px mobile)
+       ========================================================================== -->
+  <header class="global-header">
+    <div class="header-container">
+
+      <!-- Brand Identity (Single Line) -->
+      <a href="index.html" class="flex items-center gap-2.5 shrink-0 group py-1"
+        aria-label="Apex Nursing and Paramedical Institute Home">
+        <img src="assets/images/logo/brand-logo.jpg" alt="Apex Logo"
+          class="brand-logo-img w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-slate-200 dark:border-neutral-700 object-cover shadow-sm transition-transform duration-200 group-hover:scale-105">
+        <div class="flex flex-col">
+          <span
+            class="brand-title font-heading font-extrabold text-sm sm:text-base tracking-tight text-slate-900 dark:text-white leading-none">
+            APEX <span class="text-sky-600 dark:text-sky-400">INSTITUTE</span>
+          </span>
+          <span class="brand-subtitle text-[10px] font-medium text-slate-600 dark:text-slate-400 leading-tight">
+            Nursing &amp; Paramedical Sciences
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation: Exactly 6 Nav Items (Single Line) -->
+      <nav class="desktop-nav-group items-center" aria-label="Primary Navigation">
+        <ul class="header-nav-list list-none m-0 p-0">
+
+          <!-- Item 1: Home with CLICK-ONLY Dropdown -->
+          <li class="dropdown-wrapper">
+            <button type="button" class="nav-link dropdown-toggle-btn gap-1 inline-flex items-center"
+              aria-haspopup="true" aria-expanded="false" id="home-dropdown-btn">
+              <span>Home</span>
+              <svg class="w-3.5 h-3.5 transition-transform duration-200" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="dropdown-panel" aria-labelledby="home-dropdown-btn" role="menu">
+              <a href="index.html" class="dropdown-item" role="menuitem">
+                <span class="w-2 h-2 rounded-full bg-sky-600 mr-2"></span>
+                <span>Home 1 (Clinical Campus)</span>
+              </a>
+              <a href="home-2.html" class="dropdown-item" role="menuitem">
+                <span class="w-2 h-2 rounded-full bg-rose-600 mr-2"></span>
+                <span>Home 2 (Paramedical Research)</span>
+              </a>
+            </div>
+          </li>
+
+          <!-- Item 2: About (Active on about.html) -->
+          <li>
+            <a href="about.html" class="nav-link active">About</a>
+          </li>
+
+          <!-- Item 3: Courses -->
+          <li>
+            <a href="courses.html" class="nav-link">Courses</a>
+          </li>
+
+          <!-- Item 4: Facilities -->
+          <li>
+            <a href="facilities.html" class="nav-link">Facilities</a>
+          </li>
+
+          <!-- Item 5: Contact -->
+          <li>
+            <a href="contact.html" class="nav-link">Contact</a>
+          </li>
+
+          <!-- Item 7: Student Dashboard -->
+          <li>
+            <a href="dashboard.html" class="nav-link font-medium">Dashboard</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Desktop Header Controls: RTL/LTR, Dark Mode, Student Login Button -->
+      <div class="desktop-nav-group items-center gap-2">
+
+        <!-- RTL/LTR Toggle Button -->
+        <button type="button" class="dir-toggle-btn utility-btn p-1.5 px-2 text-xs font-semibold rounded-md transition"
+          aria-label="Toggle Text Direction">
+          <span class="dir-label-text">RTL</span>
+        </button>
+
+        <!-- Dark Mode Toggle Button -->
+        <button type="button" class="theme-toggle-btn utility-btn p-1.5 rounded-md transition"
+          aria-label="Toggle Dark Mode">
+          <svg class="theme-sun-icon w-4 h-4" style="display:none;" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+            </path>
+          </svg>
+          <svg class="theme-moon-icon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+          </svg>
+        </button>
+
+        <!-- Student Portal Login Button (Replacing generic CTA) -->
+        <a href="login.html"
+          class="header-action-btn inline-flex items-center justify-center text-xs font-bold bg-sky-700 hover:bg-sky-800 text-white px-3.5 py-1.5 rounded-md shadow-sm transition-all focus:ring-2 focus:ring-sky-500"
+          aria-label="Student Portal Login">
+          Login
+        </a>
+      </div>
+
+      <!-- Mobile Menu Trigger Button -->
+      <div class="mobile-menu-trigger flex lg:hidden items-center gap-1.5">
+        <button type="button" id="mobile-menu-open-btn"
+          class="p-2 rounded-md text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-neutral-800 focus:outline-none"
+          aria-label="Open Navigation Menu" aria-expanded="false">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       MOBILE MENU DRAWER & BACKDROP
+       ========================================================================== -->
+  <div id="mobile-menu-backdrop" class="mobile-backdrop" aria-hidden="true"></div>
+
+  <aside id="mobile-menu-drawer" class="mobile-menu-drawer" role="dialog" aria-modal="true"
+    aria-label="Mobile Navigation Menu">
+    <div class="p-4 border-b border-slate-200 dark:border-neutral-800 flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <img src="assets/images/logo/brand-logo.jpg" alt="Apex Logo"
+          class="w-9 h-9 rounded-full border border-slate-200 dark:border-neutral-700 object-cover">
+        <div>
+          <p class="font-heading font-extrabold text-sm text-slate-900 dark:text-white leading-tight">
+            APEX INSTITUTE
+          </p>
+          <p class="text-[10px] text-slate-500 dark:text-slate-400">
+            Nursing &amp; Paramedical Sciences
+          </p>
+        </div>
+      </div>
+      <button type="button" id="mobile-menu-close-btn"
+        class="p-1.5 rounded-md text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-neutral-800"
+        aria-label="Close Mobile Navigation">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer Settings (Dark Mode & RTL) -->
+    <div
+      class="p-3 bg-slate-50 dark:bg-neutral-900 border-b border-slate-200 dark:border-neutral-800 flex items-center justify-between">
+      <span class="text-xs font-medium text-slate-600 dark:text-slate-400">Settings:</span>
+      <div class="flex items-center gap-2">
+        <button type="button" class="dir-toggle-btn utility-btn px-2.5 py-1 text-xs font-semibold rounded transition"
+          aria-label="Toggle Direction">
+          <span class="dir-label-text">RTL</span>
+        </button>
+        <button type="button" class="theme-toggle-btn utility-btn p-1.5 rounded transition"
+          aria-label="Toggle Dark Mode">
+          <svg class="theme-sun-icon w-4 h-4" style="display:none;" fill="none" stroke="currentColor"
+            viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+            </path>
+          </svg>
+          <svg class="theme-moon-icon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+        <!-- Mobile Nav Links -->
+    <nav class="flex-1 p-4 overflow-y-auto" aria-label="Mobile Navigation Links">
+      <ul class="space-y-1">
+        <!-- Mobile Accordion for Home -->
+        <li class="mobile-accordion-wrapper">
+          <button type="button"
+            class="mobile-accordion-toggle w-full flex items-center justify-between p-2.5 text-sm font-semibold rounded-md text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-neutral-900 transition"
+            aria-expanded="false">
+            <span>Home</span>
+            <svg class="accordion-chevron-icon w-4 h-4 transition-transform duration-200 text-slate-400" fill="none"
+              stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="mobile-accordion-content space-y-1">
+            <a href="index.html" class="mobile-sub-link">
+              Home 1 (Clinical Campus)
+            </a>
+            <a href="home-2.html" class="mobile-sub-link">
+              Home 2 (Paramedical Research)
+            </a>
+          </div>
+        </li>
+
+        <li>
+          <a href="about.html" class="mobile-nav-link">
+            About
+          </a>
+        </li>
+        <li>
+          <a href="courses.html" class="mobile-nav-link">
+            Courses
+          </a>
+        </li>
+        <li>
+          <a href="facilities.html" class="mobile-nav-link">
+            Facilities
+          </a>
+        </li>
+        <li>
+          <a href="contact.html" class="mobile-nav-link">
+            Contact
+          </a>
+        </li>
+        <li>
+          <a href="dashboard.html" class="mobile-nav-link">
+            Dashboard
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Mobile Drawer Footer with Student Portal Button -->
+    <div class="p-4 border-t border-slate-200 dark:border-neutral-800">
+      <a href="login.html"
+        class="w-full flex items-center justify-center py-2.5 px-4 text-xs font-bold rounded-lg bg-sky-700 hover:bg-sky-800 text-white shadow-sm transition">
+        Login
+      </a>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       MAIN CONTENT: EXACTLY 5 CONTENT SECTIONS (INNER PAGE REQUIREMENT)
+       ========================================================================== -->
+  <main>
+
+    <!-- ==========================================================================
+         SECTION 1: HERO — INSTITUTIONAL HERITAGE & CLINICAL RIGOR
+         Layout: Full Background Image + Balanced Scrim (Identical Height Across Inner Pages)
+         ========================================================================== -->
+    <section class="inner-page-hero border-b border-slate-200 dark:border-neutral-800">
+
+      <!-- High-Res Background Image with Balanced Scrim -->
+      <div class="absolute inset-0">
+        <img src="assets/images/about/p26.jpg" alt="Apex 12-Acre Autonomous Campus" class="w-full h-full object-cover">
+        <div class="hero-bg-scrim"></div>
+      </div>
+
+      <!-- Foreground Content on Image -->
+      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center on-image-white">
+        <div
+          class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] sm:text-xs font-bold bg-sky-500/25 border border-sky-400/40 text-sky-200 mb-3 shadow-sm backdrop-blur-sm">
+          <span class="w-1.5 h-1.5 rounded-full bg-sky-400 animate-ping shrink-0"></span>
+          <span>25-Year Milestone: 2001 &ndash; 2026</span>
+        </div>
+
+        <h1
+          class="font-heading font-extrabold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white tracking-tight leading-snug sm:leading-tight mb-3 drop-shadow-md">
+          Forming Resilient <span class="text-sky-300">Nurses &amp; Paramedics</span> Through Real Hospital Rigor.
+        </h1>
+
+        <p class="text-xs sm:text-sm text-slate-100 max-w-2xl mx-auto mb-5 leading-relaxed font-normal drop-shadow">
+          South India’s premier healthcare campus with 1,800+ mandatory bedside hospital clinical rotations.
+        </p>
+
+        <!-- 4 Milestone Highlight Chips Overlaid on Hero -->
+        <div class="flex flex-wrap justify-center gap-1.5 sm:gap-2.5 max-w-2xl mx-auto">
+          <span
+            class="px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold bg-black/45 text-white border border-white/20 backdrop-blur-md shadow-sm">
+            <strong class="text-sky-300 font-extrabold">25+</strong> Years Legacy
+          </span>
+          <span
+            class="px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold bg-black/45 text-white border border-white/20 backdrop-blur-md shadow-sm">
+            <strong class="text-emerald-300 font-extrabold">14,200+</strong> Global Alumni
+          </span>
+          <span
+            class="px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold bg-black/45 text-white border border-white/20 backdrop-blur-md shadow-sm">
+            <strong class="text-rose-300 font-extrabold">18+</strong> Partner Hospitals
+          </span>
+          <span
+            class="px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs font-semibold bg-black/45 text-white border border-white/20 backdrop-blur-md shadow-sm">
+            <strong class="text-sky-300 font-extrabold">100%</strong> Licensure Rate
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 2: STATUTORY COUNCILS & ACCREDITATION GRID
+         Layout: 2x2 Split Visual Showcase (Prominent Imagery, Minimal Text, Equal Heights)
+         ========================================================================== -->
+    <section class="section-padding section-light-alternate border-b border-slate-200 dark:border-neutral-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+          <span class="clinical-badge mb-3">Statutory Licensure</span>
+          <h2
+            class="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-slate-900 dark:text-white tracking-tight">
+            Accredited by National &amp; International Health Authorities
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-700 dark:text-slate-300 mt-2">
+            Fully approved by statutory councils for immediate professional practice in India and abroad.
+          </p>
+        </div>
+
+        <!-- 2x2 Symmetrical Split Visual Grid (Simple • Minimal Text • Heavy Imagery • Equal Alignment) -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 equal-card-grid">
+
+          <!-- Card 1: Indian Nursing Council -->
+          <div
+            class="equal-card rounded-2xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 overflow-hidden shadow-sm hover:border-sky-500 dark:hover:border-sky-500 transition-all duration-300 group flex flex-col sm:flex-row">
+            <div class="sm:w-5/12 h-48 sm:h-auto min-h-[180px] relative overflow-hidden flex-shrink-0">
+              <img src="assets/images/about/p27.jpg" alt="Indian Nursing Council Inspection Compliance"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span
+                class="absolute top-3 left-3 px-2.5 py-1 text-[11px] font-bold bg-sky-700 text-white rounded-md shadow-sm">
+                INC Validated
+              </span>
+            </div>
+            <div class="sm:w-7/12 p-5 sm:p-6 flex flex-col justify-between flex-grow">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-2">
+                  <span class="text-[11px] font-bold uppercase tracking-wider text-sky-700 dark:text-sky-400">
+                    New Delhi &bull; Central Apex
+                  </span>
+                  <span
+                    class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-slate-100 dark:bg-neutral-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-neutral-700">
+                    INC-TN-4820
+                  </span>
+                </div>
+                <h3
+                  class="font-heading font-extrabold text-lg sm:text-xl text-slate-900 dark:text-white mb-1 group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                  Indian Nursing Council
+                </h3>
+                <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">
+                  Autonomous 4-Year B.Sc. &amp; 3-Year GNM Curricula
+                </p>
+              </div>
+              <div class="pt-4 border-t border-slate-200 dark:border-neutral-800 mt-4">
+                <span
+                  class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/60">
+                  <svg class="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" fill="currentColor"
+                    viewBox="0 0 20 20" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  <span>Statutory RN/RM Licensure</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: State Paramedical Board -->
+          <div
+            class="equal-card rounded-2xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 overflow-hidden shadow-sm hover:border-emerald-500 dark:hover:border-emerald-500 transition-all duration-300 group flex flex-col sm:flex-row">
+            <div class="sm:w-5/12 h-48 sm:h-auto min-h-[180px] relative overflow-hidden flex-shrink-0">
+              <img src="assets/images/sections/p28.jpg" alt="State Directorate of Medical Education Recognition"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span
+                class="absolute top-3 left-3 px-2.5 py-1 text-[11px] font-bold bg-emerald-600 text-white rounded-md shadow-sm">
+                Govt. Approved
+              </span>
+            </div>
+            <div class="sm:w-7/12 p-5 sm:p-6 flex flex-col justify-between flex-grow">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-2">
+                  <span class="text-[11px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+                    Govt. of Tamil Nadu
+                  </span>
+                  <span
+                    class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-slate-100 dark:bg-neutral-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-neutral-700">
+                    TN-PMB-119
+                  </span>
+                </div>
+                <h3
+                  class="font-heading font-extrabold text-lg sm:text-xl text-slate-900 dark:text-white mb-1 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                  State Paramedical Board
+                </h3>
+                <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">
+                  BMLT, BRIT &amp; Clinical Dialysis Technologies
+                </p>
+              </div>
+              <div class="pt-4 border-t border-slate-200 dark:border-neutral-800 mt-4">
+                <span
+                  class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/60">
+                  <svg class="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" fill="currentColor"
+                    viewBox="0 0 20 20" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  <span>DME Recognized Medical Faculty</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Medical University -->
+          <div
+            class="equal-card rounded-2xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 overflow-hidden shadow-sm hover:border-sky-500 dark:hover:border-sky-500 transition-all duration-300 group flex flex-col sm:flex-row">
+            <div class="sm:w-5/12 h-48 sm:h-auto min-h-[180px] relative overflow-hidden flex-shrink-0">
+              <img src="assets/images/sections/p29.jpg" alt="Autonomous Medical University Affiliation"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span
+                class="absolute top-3 left-3 px-2.5 py-1 text-[11px] font-bold bg-sky-700 text-white rounded-md shadow-sm">
+                UGC Approved
+              </span>
+            </div>
+            <div class="sm:w-7/12 p-5 sm:p-6 flex flex-col justify-between flex-grow">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-2">
+                  <span class="text-[11px] font-bold uppercase tracking-wider text-sky-700 dark:text-sky-400">
+                    Autonomous Enclave
+                  </span>
+                  <span
+                    class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-slate-100 dark:bg-neutral-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-neutral-700">
+                    UGC 2(f)
+                  </span>
+                </div>
+                <h3
+                  class="font-heading font-extrabold text-lg sm:text-xl text-slate-900 dark:text-white mb-1 group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                  Medical University Affiliation
+                </h3>
+                <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">
+                  Standardized 4-Year Direct Clinical Degree Pathways
+                </p>
+              </div>
+              <div class="pt-4 border-t border-slate-200 dark:border-neutral-800 mt-4">
+                <span
+                  class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/60">
+                  <svg class="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" fill="currentColor"
+                    viewBox="0 0 20 20" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  <span>Degree Conferring Authority</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Global Healthcare Mobility -->
+          <div
+            class="equal-card rounded-2xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 overflow-hidden shadow-sm hover:border-purple-500 dark:hover:border-purple-500 transition-all duration-300 group flex flex-col sm:flex-row">
+            <div class="sm:w-5/12 h-48 sm:h-auto min-h-[180px] relative overflow-hidden flex-shrink-0">
+              <img src="assets/images/sections/p30.jpg" alt="International Healthcare Mobility & Licensure"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <span
+                class="absolute top-3 left-3 px-2.5 py-1 text-[11px] font-bold bg-purple-700 text-white rounded-md shadow-sm">
+                Global Pathways
+              </span>
+            </div>
+            <div class="sm:w-7/12 p-5 sm:p-6 flex flex-col justify-between flex-grow">
+              <div>
+                <div class="flex items-center justify-between gap-2 mb-2">
+                  <span class="text-[11px] font-bold uppercase tracking-wider text-purple-700 dark:text-purple-400">
+                    UK &bull; USA &bull; Gulf
+                  </span>
+                  <span
+                    class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-slate-100 dark:bg-neutral-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-neutral-700">
+                    NHS / NCLEX
+                  </span>
+                </div>
+                <h3
+                  class="font-heading font-extrabold text-lg sm:text-xl text-slate-900 dark:text-white mb-1 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                  International Mobility Council
+                </h3>
+                <p class="text-xs text-slate-600 dark:text-slate-400 mt-1">
+                  NMC CBT/OSCE, US NCLEX-RN &amp; DHA Aligned
+                </p>
+              </div>
+              <div class="pt-4 border-t border-slate-200 dark:border-neutral-800 mt-4">
+                <span
+                  class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800/60">
+                  <svg class="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" fill="currentColor"
+                    viewBox="0 0 20 20" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  <span>Overseas Practice Verified</span>
+                </span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 3: DUAL-PEDAGOGY FRAMEWORK (50% BEDSIDE + 50% SIMULATION)
+         Layout: Fresh 2-Card Comparative Feature Grid with Real Equipment & Metrics
+         ========================================================================== -->
+    <section class="section-padding bg-white dark:bg-black border-b border-slate-200 dark:border-neutral-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="clinical-badge mb-3">Academic Philosophy</span>
+          <h2
+            class="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-slate-900 dark:text-white tracking-tight">
+            50% Hospital Bedside Practicum + 50% High-Fidelity Simulation
+          </h2>
+          <p class="text-sm sm:text-base text-slate-800 dark:text-slate-100 mt-2 leading-relaxed">
+            Zero dummy theory. Students rotate through operational hospital ICUs while refining procedures on
+            computerized Gaumard simulators.
+          </p>
+        </div>
+
+        <!-- 2 Large Feature Image Cards -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 equal-card-grid">
+
+          <!-- Feature 1: Bedside Clinical Immersion -->
+          <div
+            class="equal-card rounded-2xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 overflow-hidden shadow-sm hover:border-sky-500 transition group flex flex-col justify-between">
+            <div>
+              <div class="image-zoom-container h-56 sm:h-64 w-full relative">
+                <img src="assets/images/sections/p31.jpg" alt="Clinical Ward Bedside Immersion"
+                  class="image-zoom-target w-full h-full object-cover">
+                <span
+                  class="absolute top-3.5 left-3.5 px-3 py-1 text-xs font-bold bg-sky-700 text-white rounded shadow">
+                  1,800 Bedside Clinical Hours
+                </span>
+              </div>
+              <div class="p-6">
+                <h3 class="font-heading font-bold text-xl text-slate-900 dark:text-white mb-3">
+                  Tertiary Hospital ICU &amp; Ward Rotations
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-800 dark:text-slate-100 leading-relaxed mb-4">
+                  Direct hands-on patient rounds at Apollo, Fortis, and Sri Ramachandra hospitals under senior physician
+                  guidance:
+                </p>
+                <div class="space-y-2.5 text-xs text-slate-800 dark:text-slate-200 font-medium">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-sky-600 shrink-0"></span>
+                    <span>Multi-parameter vitals assessment &amp; arterial blood gas analysis</span>
+                  </div>
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-sky-600 shrink-0"></span>
+                    <span>Cardiac catheterization labs, neonatal ICU &amp; dialysis unit rotations</span>
+                  </div>
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-sky-600 shrink-0"></span>
+                    <span>Sterile surgical scrub nurse coordination in major operation theaters</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-0">
+              <span
+                class="block w-full py-2.5 text-center text-xs font-bold rounded-lg bg-sky-50 dark:bg-sky-950/60 text-sky-700 dark:text-sky-300 border border-sky-200 dark:border-sky-800">
+                1:1 Frontline Supervisor Oversight
+              </span>
+            </div>
+          </div>
+
+          <!-- Feature 2: High-Fidelity Simulation Drills -->
+          <div
+            class="equal-card rounded-2xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 overflow-hidden shadow-sm hover:border-emerald-500 transition group flex flex-col justify-between">
+            <div>
+              <div class="image-zoom-container h-56 sm:h-64 w-full relative">
+                <img src="assets/images/sections/p32.jpg" alt="High-Fidelity Surgical Simulation Drills"
+                  class="image-zoom-target w-full h-full object-cover">
+                <span
+                  class="absolute top-3.5 left-3.5 px-3 py-1 text-xs font-bold bg-emerald-600 text-white rounded shadow">
+                  Computerized Simulation Labs
+                </span>
+              </div>
+              <div class="p-6">
+                <h3 class="font-heading font-bold text-xl text-slate-900 dark:text-white mb-3">
+                  Gaumard Mannequins Crisis Response Drills
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-800 dark:text-slate-100 leading-relaxed mb-4">
+                  Pre-clinical drills inside our 12,000 sq. ft. simulation center reproducing acute emergency crises:
+                </p>
+                <div class="space-y-2.5 text-xs text-slate-800 dark:text-slate-200 font-medium">
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
+                    <span>Dynamic cardiac arrhythmias, defibrillation &amp; mechanical ventilator setup</span>
+                  </div>
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
+                    <span>High-risk maternal birthing, neonatal resuscitation &amp; trauma airway triage</span>
+                  </div>
+                  <div class="flex items-center gap-2.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 shrink-0"></span>
+                    <span>Continuous OSCE (Objective Structured Clinical Exam) benchmarking</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="px-6 pb-6 pt-0">
+              <span
+                class="block w-full py-2.5 text-center text-xs font-bold rounded-lg bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
+                1:10 Low Faculty-to-Student Ratio
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 4: INFRASTRUCTURE & CAMPUS LIVING
+         Layout: Fresh 3-Card Equal Grid with High-Res Images and Concise Details
+         ========================================================================== -->
+    <section class="section-padding section-light-alternate border-b border-slate-200 dark:border-neutral-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="clinical-badge mb-3">Campus Infrastructure</span>
+          <h2
+            class="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl text-slate-900 dark:text-white tracking-tight">
+            Designed for Clinical Rigor, Research &amp; Trainee Wellbeing
+          </h2>
+          <p class="text-sm sm:text-base text-slate-800 dark:text-slate-100 mt-2 leading-relaxed">
+            Round-the-clock medical research libraries, secured residential wings, and digital amphitheaters.
+          </p>
+        </div>
+
+        <!-- 3-Card Equal Infrastructure Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 equal-card-grid">
+
+          <!-- Card 1: 24/7 Central Medical Library -->
+          <div
+            class="equal-card rounded-2xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 overflow-hidden shadow-sm hover:border-sky-500 transition group flex flex-col justify-between">
+            <div>
+              <div class="image-zoom-container h-48 w-full relative">
+                <img src="assets/images/about/p33.jpg" alt="Apex 24/7 Digital Medical Library"
+                  class="image-zoom-target w-full h-full object-cover">
+                <span
+                  class="absolute top-3 right-3 px-2.5 py-1 text-[10px] font-bold bg-sky-700 text-white rounded shadow">
+                  18,000+ Volumes
+                </span>
+              </div>
+              <div class="p-5 sm:p-6">
+                <h3 class="font-heading font-bold text-lg text-slate-900 dark:text-white mb-2">
+                  24/7 Digital &amp; Medical Library
+                </h3>
+                <p class="text-xs text-slate-800 dark:text-slate-100 leading-relaxed mb-4">
+                  Online access to PubMed and Lancet journals 60 high-speed research carrels.
+                </p>
+                <div class="flex items-center gap-2 text-xs font-semibold text-sky-700 dark:text-sky-400">
+                  <span>High-Speed Wi-Fi &amp; E-Portals</span>
+                </div>
+              </div>
+            </div>
+            <div class="px-5 pb-5 pt-0">
+              <span
+                class="block w-full py-2 text-center text-xs font-bold rounded-lg bg-slate-50 dark:bg-neutral-800/80 border border-slate-200 dark:border-neutral-700 text-slate-800 dark:text-slate-200 shadow-sm">
+                Silent Study Carrels &amp; Discussion Hubs
+              </span>
+            </div>
+          </div>
+
+          <!-- Card 2: Secured Campus Hostels & Dining -->
+          <div
+            class="equal-card rounded-2xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 overflow-hidden shadow-sm hover:border-emerald-500 transition group flex flex-col justify-between">
+            <div>
+              <div class="image-zoom-container h-48 w-full relative">
+                <img src="assets/images/about/p34.jpg" alt="Apex Modern Student Residence Hostels"
+                  class="image-zoom-target w-full h-full object-cover">
+                <span
+                  class="absolute top-3 right-3 px-2.5 py-1 text-[10px] font-bold bg-emerald-600 text-white rounded shadow">
+                  Separate Hostels
+                </span>
+              </div>
+              <div class="p-5 sm:p-6">
+                <h3 class="font-heading font-bold text-lg text-slate-900 dark:text-white mb-2">
+                  Residential Hostels Wellness
+                </h3>
+                <p class="text-xs text-slate-800 dark:text-slate-100 leading-relaxed mb-4">
+                  Separate hostel female and male trainees 24/7 warden supervision
+                  biometric access.
+                </p>
+                <div class="flex items-center gap-2 text-xs font-semibold text-emerald-600 dark:text-emerald-400">
+                  <span>24 Security Medical Infirmary</span>
+                </div>
+              </div>
+            </div>
+            <div class="px-5 pb-5 pt-0">
+              <span
+                class="block w-full py-2 text-center text-xs font-bold rounded-lg bg-slate-50 dark:bg-neutral-800/80 border border-slate-200 dark:border-neutral-700 text-slate-800 dark:text-slate-200 shadow-sm">
+                Nutritious Cafeteria &amp; Recreation Lounge
+              </span>
+            </div>
+          </div>
+
+          <!-- Card 3: Smart Clinical Lecture Amphitheaters -->
+          <div
+            class="equal-card rounded-2xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 overflow-hidden shadow-sm hover:border-rose-500 transition group flex flex-col justify-between">
+            <div>
+              <div class="image-zoom-container h-48 w-full relative">
+                <img src="assets/images/hero/p35.jpg" alt="Smart Lecture Amphitheater"
+                  class="image-zoom-target w-full h-full object-cover">
+                <span
+                  class="absolute top-3 right-3 px-2.5 py-1 text-[10px] font-bold bg-rose-600 text-white rounded shadow">
+                  4K Live OT Feeds
+                </span>
+              </div>
+              <div class="p-5 sm:p-6">
+                <h3 class="font-heading font-bold text-lg text-slate-900 dark:text-white mb-2">
+                  Smart Digital Amphitheaters
+                </h3>
+                <p class="text-xs text-slate-800 dark:text-slate-100 leading-relaxed mb-4">
+                  Acoustically engineered broadcast monitors streaming
+                  surgery from partner hospitals.
+                </p>
+                <div class="flex items-center gap-2 text-xs font-semibold text-rose-600 dark:text-rose-400">
+                  <span>Interactive Case Conferences</span>
+                </div>
+              </div>
+            </div>
+            <div class="px-5 pb-5 pt-0">
+              <span
+                class="block w-full py-2 text-center text-xs font-bold rounded-lg bg-slate-50 dark:bg-neutral-800/80 border border-slate-200 dark:border-neutral-700 text-slate-800 dark:text-slate-200 shadow-sm">
+                Tele-Medicine Live Broadcast Ready
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SECTION 5: CAMPUS VISIT & ADMISSIONS DESK (MANDATORY LAST CTA)
+         Layout: Distinct High-Contrast Hero Banner with Tour Booking Triggers
+         ========================================================================== -->
+    <section
+      class="section-padding cta-banner-theme relative overflow-hidden border-t border-slate-200 dark:border-neutral-800">
+
+      <div class="absolute inset-0 overflow-hidden">
+        <img src="assets/images/about/p36.jpg" alt="Apex Campus Reception" class="w-full h-full object-cover">
+        <div class="cta-bg-scrim"></div>
+      </div>
+
+      <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 on-image-white text-center">
+        <div class="space-y-4">
+          <div class="flex justify-center">
+            <span
+              class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-sky-700 text-white shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-white animate-ping"></span>
+              <span class="text-white">Campus Admissions Desk Active &bull; Academic Year 2026-27</span>
+            </span>
+          </div>
+
+          <h2
+            class="font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl tracking-tight leading-tight max-w-3xl mx-auto">
+            Experience Our Clinical Simulation Labs in Person.
+          </h2>
+
+          <p class="text-sm sm:text-base max-w-2xl mx-auto leading-relaxed text-slate-100">
+            Schedule a guided tour of our ICU simulation suites, NABL pathology labs, and digital anatomy theater.
+          </p>
+
+          <div class="flex flex-wrap items-center justify-center gap-4 pt-3">
+            <a href="contact.html"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-bold bg-sky-700 hover:bg-sky-800 text-white shadow-lg transition">
+              <span>Book a Guided Campus Tour</span>
+              <svg class="w-4 h-4 rtl-flip" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                </path>
+              </svg>
+            </a>
+
+            <a href="courses.html"
+              class="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-bold bg-black/40 hover:bg-black/60 text-white border border-white/30 backdrop-blur-sm shadow-md transition">
+              <span>Explore Degree Curricula</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       GLOBAL SHARED FOOTER
+       ========================================================================== -->
+  <footer class="global-footer pt-14 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="footer-grid pb-12 border-b border-slate-800">
+
+        <!-- Column 1: Brand Info & Accreditation -->
+        <div>
+          <a href="index.html" aria-label="Apex Institute Home" class="flex items-center gap-3 mb-4">
+            <img src="assets/images/logo/brand-logo.jpg" alt="Apex Logo"
+              class="w-11 h-11 rounded-full border border-slate-300 dark:border-slate-700 object-cover shadow-sm">
+            <div>
+              <span
+                class="font-heading font-extrabold text-base text-slate-900 dark:text-white footer-title tracking-tight block">
+                APEX INSTITUTE
+              </span>
+              <span class="text-xs text-sky-700 dark:text-sky-400 font-semibold">
+                Nursing &amp; Paramedical Sciences
+              </span>
+            </div>
+          </a>
+          <p class="text-xs text-slate-700 dark:text-slate-200 leading-relaxed mb-4 max-w-sm">
+            Recognized by INC &amp; State Paramedical Faculty. Empowering next-generation nurses, clinical lab
+            technologists, operation theatre specialists, and emergency paramedics through world-class simulation labs
+            and hospital tie-ups.
+          </p>
+          <div class="flex items-center gap-2 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 mb-4">
+            <span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span>Admissions Open for Academic Year 2026-27</span>
+          </div>
+
+          <!-- Social Media Icons -->
+          <div class="flex items-center gap-2.5">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+              aria-label="Follow Apex Institute on Facebook"
+              class="w-8 h-8 rounded-full border border-slate-300 dark:border-neutral-700 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-sky-600 dark:hover:text-sky-400 hover:border-sky-600 transition shadow-sm">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+              aria-label="Follow Apex Institute on Instagram"
+              class="w-8 h-8 rounded-full border border-slate-300 dark:border-neutral-700 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-rose-600 dark:hover:text-rose-400 hover:border-rose-600 transition shadow-sm">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+              aria-label="Follow Apex Institute on LinkedIn"
+              class="w-8 h-8 rounded-full border border-slate-300 dark:border-neutral-700 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-sky-700 dark:hover:text-sky-400 hover:border-sky-700 transition shadow-sm">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
+                </path>
+              </svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"
+              aria-label="Subscribe to Apex Institute on YouTube"
+              class="w-8 h-8 rounded-full border border-slate-300 dark:border-neutral-700 flex items-center justify-center text-slate-700 dark:text-slate-300 hover:text-red-600 dark:hover:text-red-400 hover:border-red-600 transition shadow-sm">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z">
+                </path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Navigation Links -->
+        <div>
+          <h4
+            class="font-heading font-bold text-sm text-slate-900 dark:text-white footer-heading uppercase tracking-wider mb-4">
+            Quick Links
+          </h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="index.html" class="hover:text-sky-600 dark:hover:text-sky-400 transition">Home (Campus 1)</a>
+            </li>
+            <li><a href="home-2.html" class="hover:text-sky-600 dark:hover:text-sky-400 transition">Home 2
+                (Research)</a></li>
+            <li><a href="about.html"
+                class="hover:text-sky-600 dark:hover:text-sky-400 transition font-bold text-sky-700 dark:text-sky-400">About
+                Institute</a></li>
+            <li><a href="courses.html" class="hover:text-sky-600 dark:hover:text-sky-400 transition">Academic
+                Programs</a></li>
+            <li><a href="facilities.html" class="hover:text-sky-600 dark:hover:text-sky-400 transition">Clinical
+                Facilities</a></li>
+
+            <li><a href="contact.html" class="hover:text-sky-600 dark:hover:text-sky-400 transition">Admissions &amp;
+                Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Paramedical Departments -->
+        <div>
+          <h4
+            class="font-heading font-bold text-sm text-slate-900 dark:text-white footer-heading uppercase tracking-wider mb-4">
+            Departments
+          </h4>
+          <ul class="space-y-2 text-xs text-slate-700 dark:text-slate-200">
+            <li><a href="courses.html" class="hover:text-sky-600 dark:hover:text-sky-400 transition">B.Sc. Nursing &amp; GNM</a></li>
+            <li><a href="courses.html" class="hover:text-sky-600 dark:hover:text-sky-400 transition">Medical Lab Tech (BMLT/DMLT)</a></li>
+            <li><a href="courses.html" class="hover:text-sky-600 dark:hover:text-sky-400 transition">Operation Theatre &amp; Anaesthesia</a></li>
+            <li><a href="courses.html" class="hover:text-sky-600 dark:hover:text-sky-400 transition">Radiology &amp; Imaging Tech (BRIT)</a></li>
+            <li><a href="courses.html" class="hover:text-sky-600 dark:hover:text-sky-400 transition">Dialysis &amp; Cardiac Care Tech</a></li>
+            <li><a href="courses.html" class="hover:text-sky-600 dark:hover:text-sky-400 transition">Emergency &amp; Trauma Care</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact & Emergency Desk -->
+        <div>
+          <h4
+            class="font-heading font-bold text-sm text-slate-900 dark:text-white footer-heading uppercase tracking-wider mb-4">
+            Campus Desk
+          </h4>
+          <div class="space-y-2.5 text-xs text-slate-700 dark:text-slate-200">
+            <p class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-sky-600 dark:text-sky-400 shrink-0 mt-0.5" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <span>Healthcare Campus Road, Sector 8, Medical Enclave, Chennai, India</span>
+            </p>
+            <p class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-sky-600 dark:text-sky-400 shrink-0" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                </path>
+              </svg>
+              <span>+91 44 2847 9000 / +91 98401 23456</span>
+            </p>
+            <p class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-sky-600 dark:text-sky-400 shrink-0" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                </path>
+              </svg>
+              <span>admissions@apexnursing.edu.in</span>
+            </p>
+          </div>
+          <div class="mt-4">
+            <a href="dashboard.html"
+              class="inline-flex items-center gap-1 text-xs font-semibold text-sky-700 dark:text-sky-400 hover:underline"><span>Go
+                to Student Dashboard</span><svg class="w-3.5 h-3.5 rtl-flip" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg></a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright & Bottom Line -->
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3">
+        <p>© 2026 Apex Nursing &amp; Paramedical Training Institute. All rights reserved.</p>
+        <p class="flex items-center gap-4">
+          <a href="#" class="hover:underline transition">Privacy Policy</a>
+          <span>|</span>
+          <a href="#" class="hover:underline transition">Terms of Service</a>
+          <span>|</span>
+          <a href="#" class="hover:underline transition">INC Registration</a>
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       SCROLL TO TOP BUTTON
+       ========================================================================== -->
+  <button type="button" id="scroll-to-top" class="scroll-to-top" aria-label="Scroll back to top of page">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+    </svg>
+  </button>
+
+  <!-- External Clean JavaScript (Zero Inline Scripts) -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>

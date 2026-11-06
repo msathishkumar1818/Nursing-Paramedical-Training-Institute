@@ -1,0 +1,287 @@
+/* ==========================================================================
+   Apex Nursing & Paramedical Training Institute - Responsive Stylesheet
+   Device coverage: 320px, 375px, 425px, 768px, 820px, 1024px, 1280px, 1440px, 1920px+
+   ========================================================================== */
+
+/* Base container constraints preventing horizontal scroll */
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Ensure images don't exceed their parent containers */
+img, svg, video, canvas, audio, iframe, embed, object {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ==========================================================================
+   HEADER RESPONSIVENESS & SINGLE-LINE ENFORCEMENT
+   ========================================================================== */
+.header-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  white-space: nowrap;
+}
+
+@media (min-width: 1024px) {
+  .header-nav-list {
+    gap: 0.75rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .header-nav-list {
+    gap: 1.25rem;
+  }
+}
+
+/* If viewport is below 1024px, desktop navigation is hidden and mobile menu toggle is active */
+@media (max-width: 1023px) {
+  .desktop-nav-group {
+    display: none !important;
+  }
+  .mobile-menu-trigger {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .desktop-nav-group {
+    display: flex !important;
+  }
+  .mobile-menu-trigger {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   TABLET ADAPTATIONS (768px - 1023px)
+   ========================================================================== */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .header-container {
+    height: 60px;
+  }
+  
+  .mobile-menu-drawer {
+    max-width: 380px;
+  }
+
+  /* Table text alignment & vertical balance at 768px */
+  table th,
+  table td {
+    vertical-align: middle;
+  }
+
+  table td:last-child,
+  table th:last-child {
+    white-space: nowrap;
+    text-align: right;
+  }
+}
+
+/* ==========================================================================
+   MOBILE ADAPTATIONS (320px - 767px)
+   ========================================================================== */
+@media (max-width: 767px) {
+  :root {
+    --header-height: 58px;
+  }
+  
+  .header-container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .brand-logo-img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .brand-title {
+    font-size: 0.95rem;
+    line-height: 1.2;
+  }
+
+  .brand-subtitle {
+    display: block;
+    font-size: 9px;
+    line-height: 1.15;
+    white-space: nowrap;
+  }
+
+  .mobile-menu-drawer {
+    width: 85%;
+    max-width: 320px;
+  }
+}
+
+/* Extra small devices (320px - 374px) */
+@media (max-width: 374px) {
+  .brand-title {
+    font-size: 0.85rem;
+    max-width: 170px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .header-action-btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* ==========================================================================
+   FOOTER RESPONSIVE GRIDS
+   ========================================================================== */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+@media (min-width: 640px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  }
+}
+
+/* RTL Specific Grid adjustments */
+[dir="rtl"] .footer-grid {
+  text-align: right;
+}
+
+/* ==========================================================================
+   TOUCH & MULTI-DEVICE VIEWPORT ALIGNMENT SAFEGUARDS
+   Targeting: 360px, 375px, 393px, 412px, 427px, 440px, 768px, 960px, 1032px, 1280px
+   ========================================================================== */
+.overflow-x-auto {
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+}
+
+/* Ensure equal card columns stay balanced across all breakpoints */
+.equal-card-grid {
+  align-items: stretch;
+}
+
+.equal-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   DASHBOARD FIXED LAYOUT & MOBILE DRAWER
+   ========================================================================== */
+body:has(#dashboard-sidebar) {
+  height: 100vh;
+  overflow: hidden;
+}
+
+#dashboard-backdrop {
+  position: fixed;
+  inset: 0;
+  top: 4rem; /* 64px below fixed header */
+  background-color: rgba(0, 0, 0, 0.65);
+  z-index: 30;
+  transition: opacity 0.25s ease-in-out;
+  pointer-events: none;
+  opacity: 0;
+}
+
+#dashboard-backdrop.open {
+  display: block !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+@media (max-width: 1023px) {
+  #dashboard-sidebar {
+    position: fixed !important;
+    top: 4rem !important; /* 64px below header */
+    bottom: 0 !important;
+    left: 0 !important;
+    z-index: 50 !important;
+    width: 17rem !important; /* 272px */
+    max-width: 85vw !important;
+    height: calc(100vh - 4rem) !important;
+    transform: translateX(-100%) !important;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    box-shadow: 4px 0 24px -2px rgba(0, 0, 0, 0.4);
+    background-color: #ffffff;
+    pointer-events: auto !important;
+  }
+
+  .dark #dashboard-sidebar {
+    background-color: #000000;
+  }
+
+  [dir="rtl"] #dashboard-sidebar {
+    left: auto !important;
+    right: 0 !important;
+    transform: translateX(100%) !important;
+    box-shadow: -4px 0 24px -2px rgba(0, 0, 0, 0.4);
+  }
+
+  #dashboard-sidebar.open {
+    transform: translateX(0) !important;
+    pointer-events: auto !important;
+  }
+
+  [dir="rtl"] #dashboard-sidebar.open {
+    transform: translateX(0) !important;
+    pointer-events: auto !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  #dashboard-sidebar {
+    position: static !important;
+    height: 100% !important;
+    transform: none !important;
+    box-shadow: none !important;
+    width: 16rem !important;
+  }
+
+  #dashboard-backdrop {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE UTILITY FALLBACKS (Guaranteed across 360px - 1280px+)
+   ========================================================================== */
+.hidden {
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  .md\:hidden {
+    display: block !important;
+  }
+  .md\:block,
+  .hidden.md\:block {
+    display: none !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:hidden {
+    display: none !important;
+  }
+  .hidden.md\:block {
+    display: block !important;
+  }
+}
+
+

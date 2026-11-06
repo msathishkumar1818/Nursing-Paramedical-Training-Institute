@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Student Portal Dashboard | Apex Institute</title>
+  <meta name="description"
+    content="Apex Institute Student Dashboard - Track clinical bedside hours, view exam scorecards, submit case studies, and check duty rosters.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/images/logo/brand-logo.jpg">
+  <link rel="apple-touch-icon" href="assets/images/logo/brand-logo.jpg">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind Configuration Override -->
+  <script src="assets/js/tailwind-config.js"></script>
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body
+  class="bg-slate-50 dark:bg-black text-slate-900 dark:text-slate-100 font-sans antialiased h-screen overflow-hidden transition-colors duration-200">
+
+  <!-- ==========================================================================
+       BRANDED PRELOADER
+       ========================================================================== -->
+  <div id="preloader" role="status" aria-label="Loading Student Portal Dashboard">
+    <div class="loader-pulse-ring">
+      <img src="assets/images/logo/brand-logo.jpg" alt="Apex Emblem" class="loader-logo-img">
+    </div>
+    <p class="mt-4 text-xs font-semibold uppercase tracking-widest text-slate-500 dark:text-slate-400">
+      Loading Student Portal...
+    </p>
+  </div>
+
+  <!-- ==========================================================================
+       DASHBOARD TOP NAVIGATION BAR (MATCHING REFERENCE IMAGE)
+       ========================================================================== -->
+  <header
+    class="fixed top-0 left-0 right-0 h-16 bg-white dark:bg-black border-b border-slate-200 dark:border-neutral-800 z-50 transition-colors">
+    <div class="px-4 sm:px-6 h-full flex items-center justify-between">
+
+      <!-- Left: Brand Identity -->
+      <a href="index.html" class="flex items-center gap-2.5 sm:gap-3 group" aria-label="Apex Institute Home">
+        <img src="assets/images/logo/brand-logo.jpg" alt="Apex Logo"
+          class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-sky-600/30 object-cover shadow-sm group-hover:scale-105 transition-transform shrink-0">
+        <div class="leading-tight">
+          <span
+            class="font-heading font-extrabold text-sm sm:text-base tracking-tight text-slate-900 dark:text-white block">
+            APEX INSTITUTE
+          </span>
+          <span class="text-[10px] font-bold text-sky-700 dark:text-sky-400 tracking-wider uppercase block">
+            Student Portal
+          </span>
+        </div>
+      </a>
+
+      <!-- Right: Utility Controls & Mobile Menu Toggle Button (Right Side) -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Desktop Utilities (RTL, Dark Mode, Logout) -->
+        <div class="hidden lg:flex items-center gap-2 sm:gap-3">
+          <!-- RTL Toggle -->
+          <button type="button" class="dir-toggle-btn utility-btn px-2.5 py-1 text-xs font-semibold rounded transition"
+            aria-label="Toggle Direction">
+            <span class="dir-label-text">RTL</span>
+          </button>
+
+          <!-- Theme Toggle -->
+          <button type="button" class="theme-toggle-btn utility-btn p-1.5 rounded transition"
+            aria-label="Toggle Dark Mode">
+            <svg class="theme-sun-icon w-4 h-4" style="display:none;" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+              </path>
+            </svg>
+            <svg class="theme-moon-icon w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+            </svg>
+          </button>
+
+          <!-- Logout Action Button -->
+          <a href="login.html"
+            class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold rounded-lg border border-slate-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-slate-800 dark:text-slate-200 hover:bg-rose-50 hover:text-rose-600 dark:hover:bg-rose-950/40 dark:hover:text-rose-400 transition shadow-sm">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+            </svg>
+            <span>Logout</span>
+          </a>
+        </div>
+
+        <!-- Mobile Sidebar Toggle Button (Positioned on the Right Side of Header) -->
+        <button type="button" id="dashboard-menu-toggle"
+          class="lg:hidden flex items-center justify-center p-2 rounded-lg text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-neutral-800 border border-slate-300 dark:border-neutral-700 shadow-sm transition"
+          aria-label="Toggle Dashboard Menu" aria-expanded="false" aria-controls="dashboard-sidebar">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       MAIN DASHBOARD CONTAINER (FIXED VIEWPORT CONTAINER)
+       ========================================================================== -->
+  <div class="fixed top-16 bottom-0 left-0 right-0 flex overflow-hidden z-20">
+
+    <!-- Mobile Sidebar Backdrop (Dims Workspace Behind Sidebar, Captures Outside Clicks) -->
+    <div id="dashboard-backdrop"
+      class="fixed inset-0 top-16 bg-black/60 z-30 hidden opacity-0 transition-opacity duration-200 lg:hidden"
+      aria-hidden="true"></div>
+
+    <!-- ========================================================================
+         SIDEBAR (STUDENT MENU - 100% FIXED, NEVER SCROLLS WITH PAGE)
+         ======================================================================== -->
+    <aside id="dashboard-sidebar"
+      class="fixed lg:static top-16 bottom-0 left-0 z-50 lg:z-auto w-64 sm:w-72 h-full shrink-0 overflow-y-auto bg-white dark:bg-black border-r border-slate-200 dark:border-neutral-800 flex flex-col justify-between p-4 -translate-x-full lg:translate-x-0 transition-transform duration-200 shadow-xl lg:shadow-none">
+
+      <div>
+        <!-- Sidebar Header with Close Trigger on Mobile -->
+        <div
+          class="flex items-center justify-between pb-3 mb-3 border-b border-slate-100 dark:border-neutral-800 lg:border-none">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
+            Student Menu
+          </span>
+          <button type="button" id="dashboard-sidebar-close"
+            class="lg:hidden p-1.5 rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-neutral-800 transition" aria-label="Close Menu">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Navigation Buttons List (Directly requested: click to switch view) -->
+        <nav class="space-y-1" aria-label="Student Menu Tabs">
+
+          <!-- 1. Overview -->
+          <button type="button" data-tab="tab-overview"
+            class="dashboard-nav-btn active w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-bold bg-sky-50 dark:bg-sky-950/70 text-sky-700 dark:text-sky-400 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
+              </path>
+            </svg>
+            <span>Overview</span>
+          </button>
+
+          <!-- 2. Attendance & Rotations -->
+          <button type="button" data-tab="tab-attendance"
+            class="dashboard-nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-neutral-800 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span>Attendance &amp; Hours</span>
+          </button>
+
+          <!-- 3. Assignments & Case Logs -->
+          <button type="button" data-tab="tab-assignments"
+            class="dashboard-nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-neutral-800 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01">
+              </path>
+            </svg>
+            <span>Assignments &amp; Cases</span>
+          </button>
+
+          <!-- 4. Exam Results & Scorecards -->
+          <button type="button" data-tab="tab-results"
+            class="dashboard-nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-neutral-800 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+              </path>
+            </svg>
+            <span>Scores &amp; Results</span>
+          </button>
+
+          <!-- 5. Batch Schedules & Duty Roster -->
+          <button type="button" data-tab="tab-schedules"
+            class="dashboard-nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-neutral-800 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+            <span>Batch Schedules</span>
+          </button>
+
+          <!-- 6. Student Profile -->
+          <button type="button" data-tab="tab-profile"
+            class="dashboard-nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-neutral-800 transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+            </svg>
+            <span>Student Profile</span>
+          </button>
+
+        </nav>
+
+        <div class="mt-5 space-y-2 lg:hidden" aria-label="Dashboard settings">
+          <button type="button"
+            class="theme-toggle-btn utility-btn w-full justify-start gap-3 px-3 py-2.5 text-xs font-semibold"
+            aria-label="Toggle Dark Mode">
+            <svg class="theme-sun-icon h-4 w-4" style="display:none;" fill="none" stroke="currentColor"
+              viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+              </path>
+            </svg>
+            <svg class="theme-moon-icon h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+            </svg>
+            <span>Dark Mode</span>
+          </button>
+          <button type="button"
+            class="dir-toggle-btn utility-btn w-full justify-start px-3 py-2.5 text-xs font-semibold"
+            aria-label="Toggle Text Direction">
+            <span>Switch to </span><span class="dir-label-text">RTL</span>
+          </button>
+          <a href="login.html"
+            class="flex items-center gap-3 px-3 py-2.5 text-xs font-bold rounded-lg border border-slate-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-slate-800 dark:text-slate-200 hover:bg-rose-50 hover:text-rose-600 dark:hover:bg-rose-950/40 dark:hover:text-rose-400 transition shadow-sm">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+            </svg>
+            <span>Logout</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom Card: Mentor On-Duty Desk (Matching Reference Image) -->
+      <div
+        class="p-3.5 rounded-xl bg-slate-50 dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 text-xs">
+        <div class="font-bold text-slate-900 dark:text-white mb-1">Mentor On-Duty Desk</div>
+        <p class="text-[11px] text-slate-600 dark:text-slate-400 mb-2 leading-relaxed">
+          Questions regarding today's ICU clinical posting or case logs? Academic hotline: ext. 402.
+        </p>
+        <span class="inline-flex items-center gap-1 text-[11px] font-bold text-sky-700 dark:text-sky-400">
+          <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+          <span>Dr. Sarah V., MD Online</span>
+        </span>
+      </div>
+
+    </aside>
+
+    <!-- ========================================================================
+         MAIN DYNAMIC WORKSPACE (UPDATES WHEN SIDEBAR BUTTONS ARE CLICKED)
+         ======================================================================== -->
+    <main class="min-h-0 flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 relative z-10">
+
+      <!-- ====================================================================
+           TAB PANEL 1: OVERVIEW (MATCHING REFERENCE IMAGE)
+           ==================================================================== -->
+      <div id="tab-overview" class="dashboard-tab-panel space-y-6">
+
+        <!-- Welcome Banner Header -->
+        <div
+          class="p-6 sm:p-7 rounded-2xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <h1 class="font-heading font-extrabold text-2xl sm:text-3xl text-slate-900 dark:text-white tracking-tight">
+              Welcome back, Priya
+            </h1>
+            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
+              Active Protocol: <strong class="text-slate-900 dark:text-white">B.Sc. Nursing (Year 4 &bull; Semester
+                VII)</strong> &bull; Attending Mentor: <span class="text-sky-700 dark:text-sky-400 font-bold">Dr. Sarah
+                V., MD (Critical Care)</span>
+            </p>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <button type="button"
+              class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-bold bg-sky-900 hover:bg-sky-800 text-white shadow-sm transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+              </svg>
+              <span> Bedside Hours</span>
+            </button>
+            <button type="button"
+              class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-bold border border-slate-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-neutral-800 transition">
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z">
+                </path>
+              </svg>
+              <span>View Scorecards</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 4 Metric Stat Cards (Standardized Heights & Perfectly Aligned Grid) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+          <!-- Card 1: Next Clinical Duty -->
+          <div
+            class="p-5 rounded-2xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 shadow-sm flex flex-col justify-between h-full">
+            <div>
+              <div
+                class="flex items-center justify-between text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-2 h-5">
+                <span> Clinical Duty</span>
+                <span class="text-amber-500">&#9200;</span>
+              </div>
+              <div
+                class="font-heading font-extrabold text-lg text-slate-900 dark:text-white mb-1 min-h-[2.25rem] flex items-center">
+                Tomorrow &bull; 08:00 AM
+              </div>
+              <p class="text-xs text-sky-700 dark:text-sky-400 font-semibold mb-3 min-h-[2rem] flex items-center">
+                Apollo Hospital &bull; Ward 4 ICU
+              </p>
+            </div>
+            <div
+              class="mt-auto pt-3 border-t border-slate-100 dark:border-neutral-800 text-[11px] text-slate-500 dark:text-slate-400 flex items-center justify-between">
+              <span>Preceptor: Dr. M. Jayanthi</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Bedside Hours -->
+          <div
+            class="p-5 rounded-2xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 shadow-sm flex flex-col justify-between h-full">
+            <div>
+              <div
+                class="flex items-center justify-between text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-2 h-5">
+                <span>Bedside Logged</span>
+                <span class="text-emerald-500">&#9889;</span>
+              </div>
+              <div
+                class="font-heading font-extrabold text-lg text-slate-900 dark:text-white mb-1 min-h-[2.25rem] flex items-center">
+                1,420 <span class="text-xs text-slate-500 font-normal ml-1">/ 1,800 Hrs</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400 mb-3 min-h-[2rem] flex items-center">
+                Phase 4: Advanced Critical Care
+              </p>
+            </div>
+            <div
+              class="mt-auto pt-3 border-t border-slate-100 dark:border-neutral-800 text-[11px] text-slate-500 dark:text-slate-400 flex items-center justify-between">
+              <span>Critical Care Passed</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Recent Test Score -->
+          <div
+            class="p-5 rounded-2xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 shadow-sm flex flex-col justify-between h-full">
+            <div>
+              <div
+                class="flex items-center justify-between text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-2 h-5">
+                <span>Recent OSCE Score</span>
+                <span class="text-sky-500">&#10003;</span>
+              </div>
+              <div
+                class="font-heading font-extrabold text-lg text-slate-900 dark:text-white mb-1 min-h-[2.25rem] flex items-center">
+                92.50 <span class="text-xs text-slate-500 font-normal ml-1">/ 100</span>
+              </div>
+              <p class="text-xs text-emerald-600 dark:text-emerald-400 font-bold mb-3 min-h-[2rem] flex items-center">
+                National Rank #3 &bull; 98.2%ile
+              </p>
+            </div>
+            <div
+              class="mt-auto pt-3 border-t border-slate-100 dark:border-neutral-800 text-[11px] text-slate-500 dark:text-slate-400 flex items-center justify-between">
+              <span>Exam SIM-2026-Passed</span>
+            </div>
+          </div>
+
+          <!-- Card 4: Quick Action -->
+          <div
+            class="p-5 rounded-2xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 shadow-sm flex flex-col justify-between h-full">
+            <div>
+              <div
+                class="flex items-center justify-between text-[11px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wide mb-2 h-5">
+                <span>Pending Task</span>
+                <span class="text-purple-500">&#128197;</span>
+              </div>
+              <div
+                class="font-heading font-bold text-base text-slate-900 dark:text-white mb-1 min-h-[2.25rem] flex items-center">
+                Submit Case
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400 mb-3 min-h-[2rem] flex items-center leading-snug">
+                Pediatric respiratory triage dilution chart.
+              </p>
+            </div>
+            <div
+              class="mt-auto pt-3 border-t border-slate-100 dark:border-neutral-800 flex items-center justify-between">
+              <a href="#" class="text-xs font-bold text-sky-700 dark:text-sky-400 hover:underline">Submit Case Now
+                &rarr;</a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Schedule Highlights & Upcoming Clinical Rotations Section -->
+        <div
+          class="rounded-2xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 shadow-sm overflow-hidden">
+
+          <div class="p-5 sm:p-6 border-b border-slate-200 dark:border-neutral-800 flex items-center justify-between">
+            <h3 class="font-heading font-bold text-base sm:text-lg text-slate-900 dark:text-white">
+              Schedule Highlights &amp; Upcoming Clinical Rotations
+            </h3>
+            <a href="#" class="text-xs font-bold text-sky-700 dark:text-sky-400 hover:underline">View Full Schedule
+              &rarr;</a>
+          </div>
+
+          <!-- Mobile Cards (Visible on screens < 768px: 360, 375, 393, 412, 427, 440) -->
+          <div class="block md:hidden p-4 space-y-3">
+
+            <!-- Mobile Session Card 1 -->
+            <div
+              class="p-4 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-black space-y-2.5">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <h4 class="font-bold text-sm text-slate-900 dark:text-white leading-snug">ICU Advanced Life Support
+                    Simulation</h4>
+                  <span class="text-[11px] text-slate-500 block">CBT Terminal 12 &bull; 30 Simulation Objectives</span>
+                </div>
+                <span
+                  class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400 shrink-0">Confirmed</span>
+              </div>
+              <div class="text-xs text-slate-600 dark:text-slate-300 flex flex-wrap gap-x-4 gap-y-1">
+                <span><strong>Date:</strong> Tomorrow &bull; 10:00 AM</span>
+                <span><strong>Proctor:</strong> Dr. Arvind Swaminathan</span>
+              </div>
+              <div class="pt-2 border-t border-slate-200 dark:border-neutral-800 flex justify-end">
+                <button type="button"
+                  class="w-full sm:w-auto px-4 py-1.5 rounded-lg text-xs font-bold bg-amber-500 hover:bg-amber-600 text-black shadow-sm transition">Launch
+                  Test</button>
+              </div>
+            </div>
+
+            <!-- Mobile Session Card 2 -->
+            <div
+              class="p-4 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-black space-y-2.5">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <h4 class="font-bold text-sm text-slate-900 dark:text-white leading-snug">Cardiology Angioplasty
+                    Protocol Defense</h4>
+                  <span class="text-[11px] text-slate-500 block">Cath Lab Telemetry &amp; Pharmacodynamics</span>
+                </div>
+                <span
+                  class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400 shrink-0">Confirmed</span>
+              </div>
+              <div class="text-xs text-slate-600 dark:text-slate-300 flex flex-wrap gap-x-4 gap-y-1">
+                <span><strong>Date:</strong> Friday &bull; 04:30 PM</span>
+                <span><strong>Proctor:</strong> Faculty Board</span>
+              </div>
+              <div class="pt-2 border-t border-slate-200 dark:border-neutral-800 flex justify-end">
+                <button type="button"
+                  class="w-full sm:w-auto px-4 py-1.5 rounded-lg text-xs font-bold border border-slate-300 dark:border-neutral-700 hover:bg-slate-100 dark:hover:bg-neutral-800 transition">Prep
+                  Notes</button>
+              </div>
+            </div>
+
+            <!-- Mobile Session Card 3 -->
+            <div
+              class="p-4 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-black space-y-2.5">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <h4 class="font-bold text-sm text-slate-900 dark:text-white leading-snug">Pediatric Gaumard HAL
+                    Emergency Clinic</h4>
+                  <span class="text-[11px] text-slate-500 block">Airway Cannulation &amp; Neonatal CPAP</span>
+                </div>
+                <span
+                  class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-sky-100 dark:bg-sky-950/80 text-sky-700 dark:text-sky-400 shrink-0">Scheduled</span>
+              </div>
+              <div class="text-xs text-slate-600 dark:text-slate-300 flex flex-wrap gap-x-4 gap-y-1">
+                <span><strong>Date:</strong> Saturday &bull; 11:00 AM</span>
+                <span><strong>Proctor:</strong> Dr. Meera Krishnan</span>
+              </div>
+              <div class="pt-2 border-t border-slate-200 dark:border-neutral-800 flex justify-end">
+                <button type="button"
+                  class="w-full sm:w-auto px-4 py-1.5 rounded-lg text-xs font-bold border border-slate-300 dark:border-neutral-700 hover:bg-slate-100 dark:hover:bg-neutral-800 transition">Lab
+                  Manual</button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Desktop Table (Visible on md+: 768px, 960px, 1032px, 1280px) -->
+          <div class="hidden md:block overflow-x-auto w-full">
+            <table class="w-full min-w-[640px] text-left text-xs">
+              <thead
+                class="bg-slate-50 dark:bg-neutral-800 text-slate-500 dark:text-slate-400 uppercase font-bold text-[10px] tracking-wider border-b border-slate-200 dark:border-neutral-700">
+                <tr>
+                  <th scope="col" class="py-3.5 px-4 sm:px-6 w-[34%]">Session / Clinical Rotation</th>
+                  <th scope="col" class="py-3.5 px-4 sm:px-6 w-[20%] whitespace-nowrap">Date &amp; Time</th>
+                  <th scope="col" class="py-3.5 px-4 sm:px-6 w-[20%]">Mentor / Proctor</th>
+                  <th scope="col" class="py-3.5 px-4 sm:px-6 w-[12%] whitespace-nowrap">Status</th>
+                  <th scope="col" class="py-3.5 px-4 sm:px-6 w-[14%] whitespace-nowrap text-right">Action</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 dark:divide-neutral-800 text-slate-800 dark:text-slate-200">
+
+                <!-- Row 1 -->
+                <tr class="hover:bg-slate-50 dark:hover:bg-neutral-800/50 transition">
+                  <td class="py-4 px-4 sm:px-6 font-bold text-slate-900 dark:text-white align-middle">
+                    <div>ICU Advanced Life Support Simulation</div>
+                    <span class="text-[11px] font-normal text-slate-500">CBT Terminal 12 &bull; 30 Simulation
+                      Objectives</span>
+                  </td>
+                  <td class="py-4 px-4 sm:px-6 align-middle whitespace-nowrap">Tomorrow &bull; 10:00 AM</td>
+                  <td class="py-4 px-4 sm:px-6 align-middle">Dr. Arvind Swaminathan</td>
+                  <td class="py-4 px-4 sm:px-6 align-middle whitespace-nowrap">
+                    <span
+                      class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400">
+                      Confirmed
+                    </span>
+                  </td>
+                  <td class="py-4 px-4 sm:px-6 align-middle whitespace-nowrap text-right">
+                    <button type="button"
+                      class="px-3 py-1.5 rounded-lg text-xs font-bold bg-amber-500 hover:bg-amber-600 text-black shadow-sm transition">
+                      Launch Test
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- Row 2 -->
+                <tr class="hover:bg-slate-50 dark:hover:bg-neutral-800/50 transition">
+                  <td class="py-4 px-4 sm:px-6 font-bold text-slate-900 dark:text-white align-middle">
+                    <div>Cardiology Angioplasty Protocol Defense</div>
+                    <span class="text-[11px] font-normal text-slate-500">Cath Lab Telemetry &amp;
+                      Pharmacodynamics</span>
+                  </td>
+                  <td class="py-4 px-4 sm:px-6 align-middle whitespace-nowrap">Friday &bull; 04:30 PM</td>
+                  <td class="py-4 px-4 sm:px-6 align-middle">Faculty Board</td>
+                  <td class="py-4 px-4 sm:px-6 align-middle whitespace-nowrap">
+                    <span
+                      class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400">
+                      Confirmed
+                    </span>
+                  </td>
+                  <td class="py-4 px-4 sm:px-6 align-middle whitespace-nowrap text-right">
+                    <button type="button"
+                      class="px-3 py-1.5 rounded-lg text-xs font-bold border border-slate-300 dark:border-neutral-700 hover:bg-slate-100 dark:hover:bg-neutral-800 transition">
+                      Prep Notes
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- Row 3 -->
+                <tr class="hover:bg-slate-50 dark:hover:bg-neutral-800/50 transition">
+                  <td class="py-4 px-4 sm:px-6 font-bold text-slate-900 dark:text-white align-middle">
+                    <div>Pediatric Gaumard HAL Emergency Clinic</div>
+                    <span class="text-[11px] font-normal text-slate-500">Airway Cannulation &amp; Neonatal CPAP</span>
+                  </td>
+                  <td class="py-4 px-4 sm:px-6 align-middle whitespace-nowrap">Saturday &bull; 11:00 AM</td>
+                  <td class="py-4 px-4 sm:px-6 align-middle">Dr. Meera Krishnan</td>
+                  <td class="py-4 px-4 sm:px-6 align-middle whitespace-nowrap">
+                    <span
+                      class="px-2.5 py-1 rounded-full text-[10px] font-bold bg-sky-100 dark:bg-sky-950/80 text-sky-700 dark:text-sky-400">
+                      Scheduled
+                    </span>
+                  </td>
+                  <td class="py-4 px-4 sm:px-6 align-middle whitespace-nowrap text-right">
+                    <button type="button"
+                      class="px-3 py-1.5 rounded-lg text-xs font-bold border border-slate-300 dark:border-neutral-700 hover:bg-slate-100 dark:hover:bg-neutral-800 transition">
+                      Lab Manual
+                    </button>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ====================================================================
+           TAB PANEL 2: ATTENDANCE & CLINICAL HOURS (DYNAMIC TAB)
+           ==================================================================== -->
+      <div id="tab-attendance" class="dashboard-tab-panel space-y-6 hidden">
+        <div
+          class="p-6 rounded-2xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 shadow-sm">
+          <h2 class="font-heading font-extrabold text-2xl text-slate-900 dark:text-white mb-2">
+            Clinical Bedside Attendance &amp; Hospital Rotations Ledger
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6">
+            Mandatory clinical hours verified via hospital biometric punches and signed off by unit nursing
+            superintendents.
+          </p>
+
+          <!-- 4 Department Hours Progress Bars -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-black border border-slate-200 dark:border-neutral-800">
+              <span class="text-xs font-bold text-slate-700 dark:text-slate-300 block mb-1">Medical-Surgical Ward</span>
+              <span class="font-heading font-extrabold text-lg text-emerald-600 dark:text-emerald-400">450 / 450
+                Hrs</span>
+              <div class="w-full bg-slate-200 dark:bg-neutral-800 h-1.5 rounded-full mt-2">
+                <div class="bg-emerald-500 h-full rounded-full bar-w-100"></div>
+              </div>
+              <span class="text-[10px] text-slate-500 mt-1 block">100% Completed</span>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-black border border-slate-200 dark:border-neutral-800">
+              <span class="text-xs font-bold text-slate-700 dark:text-slate-300 block mb-1">Pediatric &amp; Neonatal
+                ICU</span>
+              <span class="font-heading font-extrabold text-lg text-sky-600 dark:text-sky-400">320 / 350 Hrs</span>
+              <div class="w-full bg-slate-200 dark:bg-neutral-800 h-1.5 rounded-full mt-2">
+                <div class="bg-sky-500 h-full rounded-full bar-w-91"></div>
+              </div>
+              <span class="text-[10px] text-slate-500 mt-1 block">91.4% Completed</span>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-black border border-slate-200 dark:border-neutral-800">
+              <span class="text-xs font-bold text-slate-700 dark:text-slate-300 block mb-1">Operation Theatre &amp;
+                PACU</span>
+              <span class="font-heading font-extrabold text-lg text-rose-600 dark:text-rose-400">350 / 400 Hrs</span>
+              <div class="w-full bg-slate-200 dark:bg-neutral-800 h-1.5 rounded-full mt-2">
+                <div class="bg-rose-500 h-full rounded-full bar-w-88"></div>
+              </div>
+              <span class="text-[10px] text-slate-500 mt-1 block">87.5% Completed</span>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 dark:bg-black border border-slate-200 dark:border-neutral-800">
+              <span class="text-xs font-bold text-slate-700 dark:text-slate-300 block mb-1">Community Health
+                Nursing</span>
+              <span class="font-heading font-extrabold text-lg text-purple-600 dark:text-purple-400">300 / 600
+                Hrs</span>
+              <div class="w-full bg-slate-200 dark:bg-neutral-800 h-1.5 rounded-full mt-2">
+                <div class="bg-purple-500 h-full rounded-full bar-w-50"></div>
+              </div>
+              <span class="text-[10px] text-slate-500 mt-1 block">50% Completed</span>
+            </div>
+          </div>
+
+          <!-- Attendance Log Table -->
+          <!-- Mobile Cards (Visible on screens < 768px: 360, 375, 393, 412, 427, 440) -->
+          <div class="block md:hidden space-y-3">
+            <!-- Card 1 -->
+            <div
+              class="p-4 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-black space-y-2.5">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <span class="text-xs font-bold text-slate-900 dark:text-white block">Today &bull; Nov 06, 2026</span>
+                  <span class="text-[11px] text-slate-500">Morning (08:00 &ndash; 14:00)</span>
+                </div>
+                <span
+                  class="px-2.5 py-1 rounded-full text-xs font-extrabold bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400 shrink-0 whitespace-nowrap">6.0
+                  Hrs</span>
+              </div>
+              <div class="text-xs text-slate-700 dark:text-slate-300">
+                <strong>Hospital:</strong> Apollo Hospitals &bull; Medical ICU Ward 4
+              </div>
+              <div
+                class="pt-2 border-t border-slate-200 dark:border-neutral-800 flex items-center justify-between text-xs">
+                <span class="text-[11px] text-slate-500">Preceptor Sign-Off</span>
+                <span
+                  class="px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold text-[10px]">Verified
+                  By Dr. Sarah</span>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+              class="p-4 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-black space-y-2.5">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <span class="text-xs font-bold text-slate-900 dark:text-white block">Yesterday &bull; Nov 05,
+                    2026</span>
+                  <span class="text-[11px] text-slate-500">Evening (14:00 &ndash; 20:00)</span>
+                </div>
+                <span
+                  class="px-2.5 py-1 rounded-full text-xs font-extrabold bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400 shrink-0 whitespace-nowrap">6.0
+                  Hrs</span>
+              </div>
+              <div class="text-xs text-slate-700 dark:text-slate-300">
+                <strong>Hospital:</strong> Fortis Healthcare &bull; Pediatric Triage
+              </div>
+              <div
+                class="pt-2 border-t border-slate-200 dark:border-neutral-800 flex items-center justify-between text-xs">
+                <span class="text-[11px] text-slate-500">Preceptor Sign-Off</span>
+                <span
+                  class="px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold text-[10px]">Verified
+                  By Dr. Arvind</span>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+              class="p-4 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-black space-y-2.5">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <span class="text-xs font-bold text-slate-900 dark:text-white block">Nov 04, 2026</span>
+                  <span class="text-[11px] text-slate-500">Morning (09:00 &ndash; 13:00)</span>
+                </div>
+                <span
+                  class="px-2.5 py-1 rounded-full text-xs font-extrabold bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400 shrink-0 whitespace-nowrap">4.0
+                  Hrs</span>
+              </div>
+              <div class="text-xs text-slate-700 dark:text-slate-300">
+                <strong>Hospital:</strong> Apex Campus &bull; Simulation ICU Pod 2
+              </div>
+              <div
+                class="pt-2 border-t border-slate-200 dark:border-neutral-800 flex items-center justify-between text-xs">
+                <span class="text-[11px] text-slate-500">Preceptor Sign-Off</span>
+                <span
+                  class="px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold text-[10px]">Verified
+                  By Lab Director</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Attendance Log Table (Visible on md+: 768px, 960px, 1032px, 1280px) -->
+          <div class="hidden md:block overflow-x-auto w-full">
+            <table class="w-full min-w-[640px] text-left text-xs">
+              <thead
+                class="bg-slate-50 dark:bg-neutral-800 text-slate-500 dark:text-slate-400 uppercase font-bold text-[10px] tracking-wider border-b border-slate-200 dark:border-neutral-700">
+                <tr>
+                  <th scope="col" class="py-3 px-4 w-[24%] whitespace-nowrap">Posting Date</th>
+                  <th scope="col" class="py-3 px-4 w-[34%]">Hospital &amp; Department</th>
+                  <th scope="col" class="py-3 px-4 w-[18%] whitespace-nowrap">Shift</th>
+                  <th scope="col" class="py-3 px-4 w-[10%] whitespace-nowrap">Hours</th>
+                  <th scope="col" class="py-3 px-4 w-[14%] whitespace-nowrap text-right">Preceptor Sign-Off</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 dark:divide-neutral-800 text-slate-800 dark:text-slate-200">
+                <tr class="hover:bg-slate-50 dark:hover:bg-neutral-800/50 transition">
+                  <td class="py-3.5 px-4 font-semibold text-slate-900 dark:text-white align-middle whitespace-nowrap">
+                    Today &bull; Nov 06, 2026</td>
+                  <td class="py-3.5 px-4 align-middle">Apollo Hospitals &bull; Medical ICU Ward 4</td>
+                  <td class="py-3.5 px-4 align-middle whitespace-nowrap">Morning (08:00 &ndash; 14:00)</td>
+                  <td
+                    class="py-3.5 px-4 align-middle font-bold text-emerald-600 dark:text-emerald-400 whitespace-nowrap">
+                    6.0 Hrs</td>
+                  <td class="py-3.5 px-4 align-middle whitespace-nowrap text-right">
+                    <span
+                      class="px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold text-[10px]">Verified
+                      By Dr. Sarah</span>
+                  </td>
+                </tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-neutral-800/50 transition">
+                  <td class="py-3.5 px-4 font-semibold text-slate-900 dark:text-white align-middle whitespace-nowrap">
+                    Yesterday &bull; Nov 05, 2026</td>
+                  <td class="py-3.5 px-4 align-middle">Fortis Healthcare &bull; Pediatric Triage</td>
+                  <td class="py-3.5 px-4 align-middle whitespace-nowrap">Evening (14:00 &ndash; 20:00)</td>
+                  <td
+                    class="py-3.5 px-4 align-middle font-bold text-emerald-600 dark:text-emerald-400 whitespace-nowrap">
+                    6.0 Hrs</td>
+                  <td class="py-3.5 px-4 align-middle whitespace-nowrap text-right">
+                    <span
+                      class="px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold text-[10px]">Verified
+                      By Dr. Arvind</span>
+                  </td>
+                </tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-neutral-800/50 transition">
+                  <td class="py-3.5 px-4 font-semibold text-slate-900 dark:text-white align-middle whitespace-nowrap">
+                    Nov 04, 2026</td>
+                  <td class="py-3.5 px-4 align-middle">Apex Campus &bull; Simulation ICU Pod 2</td>
+                  <td class="py-3.5 px-4 align-middle whitespace-nowrap">Morning (09:00 &ndash; 13:00)</td>
+                  <td
+                    class="py-3.5 px-4 align-middle font-bold text-emerald-600 dark:text-emerald-400 whitespace-nowrap">
+                    4.0 Hrs</td>
+                  <td class="py-3.5 px-4 align-middle whitespace-nowrap text-right">
+                    <span
+                      class="px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold text-[10px]">Verified
+                      By Lab Director</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ====================================================================
+           TAB PANEL 3: ASSIGNMENTS & CASE LOGS (DYNAMIC TAB)
+           ==================================================================== -->
+      <div id="tab-assignments" class="dashboard-tab-panel space-y-6 hidden">
+        <div
+          class="p-6 rounded-2xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 shadow-sm">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div>
+              <h2 class="font-heading font-extrabold text-2xl text-slate-900 dark:text-white">
+                Clinical Case Studies &amp; Patient Logbook Submissions
+              </h2>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
+                Upload case study diagnoses, pharmacology inotrope dilution charts, and maternal delivery logs.
+              </p>
+            </div>
+            <button type="button"
+              class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-bold bg-sky-700 hover:bg-sky-800 text-white shadow-sm transition">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+              </svg>
+              <span>Upload New Case Log</span>
+            </button>
+          </div>
+
+          <!-- Assignments Table -->
+          <!-- Mobile Cards (Visible on screens < 768px: 360, 375, 393, 412, 427, 440) -->
+          <div class="block md:hidden space-y-3">
+            <!-- Card 1 -->
+            <div
+              class="p-4 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-black space-y-2.5">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <h4 class="font-bold text-sm text-slate-900 dark:text-white leading-snug">Case #14: Acute Hypovolemic
+                    Shock</h4>
+                  <span class="text-[11px] text-slate-500 block">Critical Care Nursing &bull; Prof. Vasanthi</span>
+                </div>
+                <span
+                  class="px-2.5 py-1 rounded-full text-xs font-extrabold bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400 shrink-0 whitespace-nowrap">19
+                  / 20</span>
+              </div>
+              <p
+                class="text-xs text-slate-600 dark:text-slate-300 italic bg-white dark:bg-neutral-900 p-2.5 rounded-lg border border-slate-200 dark:border-neutral-800">
+                &ldquo;Excellent fluid balance calculation and CVP monitoring details.&rdquo;
+              </p>
+              <div
+                class="pt-2 border-t border-slate-200 dark:border-neutral-800 flex items-center justify-between text-xs">
+                <span class="text-slate-500">Due: Oct 30, 2026</span>
+                <button type="button" class="font-bold text-sky-700 dark:text-sky-400 hover:underline">View PDF
+                  &rarr;</button>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+              class="p-4 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-black space-y-2.5">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <h4 class="font-bold text-sm text-slate-900 dark:text-white leading-snug">Case #15: IV Inotropes &amp;
+                    Vasopressor Dilution</h4>
+                  <span class="text-[11px] text-slate-500 block">Clinical Pharmacology &bull; Dr. Ramanathan</span>
+                </div>
+                <span
+                  class="px-2.5 py-1 rounded-full text-xs font-extrabold bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400 shrink-0 whitespace-nowrap">20
+                  / 20</span>
+              </div>
+              <p
+                class="text-xs text-slate-600 dark:text-slate-300 italic bg-white dark:bg-neutral-900 p-2.5 rounded-lg border border-slate-200 dark:border-neutral-800">
+                &ldquo;Perfect microgram/kg/min dosage formulas. Distinction awarded.&rdquo;
+              </p>
+              <div
+                class="pt-2 border-t border-slate-200 dark:border-neutral-800 flex items-center justify-between text-xs">
+                <span class="text-slate-500">Due: Nov 02, 2026</span>
+                <button type="button" class="font-bold text-sky-700 dark:text-sky-400 hover:underline">View PDF
+                  &rarr;</button>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+              class="p-4 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-black space-y-2.5">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <h4 class="font-bold text-sm text-slate-900 dark:text-white leading-snug">Case #16: Neonatal Incubator
+                    Care</h4>
+                  <span class="text-[11px] text-slate-500 block">Pediatric Nursing &bull; Dr. Jayanthi</span>
+                </div>
+                <span
+                  class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 shrink-0 whitespace-nowrap">Under
+                  Review</span>
+              </div>
+              <p
+                class="text-xs text-slate-500 dark:text-slate-400 bg-white dark:bg-neutral-900 p-2.5 rounded-lg border border-slate-200 dark:border-neutral-800">
+                Awaiting faculty signature and clinical ward stamping.
+              </p>
+              <div
+                class="pt-2 border-t border-slate-200 dark:border-neutral-800 flex items-center justify-between text-xs">
+                <span class="text-slate-500">Due: Tomorrow &bull; 05:00 PM</span>
+                <button type="button" class="font-bold text-sky-700 dark:text-sky-400 hover:underline">Edit Draft
+                  &rarr;</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Assignments Table (Visible on md+: 768px, 960px, 1032px, 1280px) -->
+          <div class="hidden md:block overflow-x-auto w-full">
+            <table class="w-full min-w-[680px] text-left text-xs">
+              <thead
+                class="bg-slate-50 dark:bg-neutral-800 text-slate-500 dark:text-slate-400 uppercase font-bold text-[10px] tracking-wider border-b border-slate-200 dark:border-neutral-700">
+                <tr>
+                  <th scope="col" class="py-3 px-4 w-[34%]">Case Title &amp; Subject</th>
+                  <th scope="col" class="py-3 px-4 w-[16%] whitespace-nowrap">Due Date</th>
+                  <th scope="col" class="py-3 px-4 w-[12%] whitespace-nowrap">Marks</th>
+                  <th scope="col" class="py-3 px-4 w-[26%]">Preceptor Feedback</th>
+                  <th scope="col" class="py-3 px-4 w-[12%] whitespace-nowrap text-right">Action</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 dark:divide-neutral-800 text-slate-800 dark:text-slate-200">
+                <tr class="hover:bg-slate-50 dark:hover:bg-neutral-800/50 transition">
+                  <td class="py-3.5 px-4 font-bold text-slate-900 dark:text-white align-middle">
+                    <div>Case #14: Acute Hypovolemic Shock in Adult Trauma</div>
+                    <span class="text-[11px] font-normal text-slate-500">Critical Care Nursing &bull; Prof.
+                      Vasanthi</span>
+                  </td>
+                  <td class="py-3.5 px-4 align-middle whitespace-nowrap">Oct 30, 2026</td>
+                  <td
+                    class="py-3.5 px-4 align-middle whitespace-nowrap font-extrabold text-emerald-600 dark:text-emerald-400">
+                    19 / 20</td>
+                  <td class="py-3.5 px-4 align-middle text-slate-600 dark:text-slate-400">Excellent fluid balance
+                    calculation and CVP monitoring details.</td>
+                  <td class="py-3.5 px-4 align-middle whitespace-nowrap text-right">
+                    <button type="button" class="text-xs font-bold text-sky-700 dark:text-sky-400 hover:underline">View
+                      PDF</button>
+                  </td>
+                </tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-neutral-800/50 transition">
+                  <td class="py-3.5 px-4 font-bold text-slate-900 dark:text-white align-middle">
+                    <div>Case #15: IV Inotropes &amp; Vasopressor Dilution Calculations</div>
+                    <span class="text-[11px] font-normal text-slate-500">Clinical Pharmacology &bull; Dr.
+                      Ramanathan</span>
+                  </td>
+                  <td class="py-3.5 px-4 align-middle whitespace-nowrap">Nov 02, 2026</td>
+                  <td
+                    class="py-3.5 px-4 align-middle whitespace-nowrap font-extrabold text-emerald-600 dark:text-emerald-400">
+                    20 / 20</td>
+                  <td class="py-3.5 px-4 align-middle text-slate-600 dark:text-slate-400">Perfect microgram/kg/min
+                    dosage formulas. Distinction awarded.</td>
+                  <td class="py-3.5 px-4 align-middle whitespace-nowrap text-right">
+                    <button type="button" class="text-xs font-bold text-sky-700 dark:text-sky-400 hover:underline">View
+                      PDF</button>
+                  </td>
+                </tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-neutral-800/50 transition">
+                  <td class="py-3.5 px-4 font-bold text-slate-900 dark:text-white align-middle">
+                    <div>Case #16: Neonatal Incubator Care &amp; Phototherapy Log</div>
+                    <span class="text-[11px] font-normal text-slate-500">Pediatric Nursing &bull; Dr. Jayanthi</span>
+                  </td>
+                  <td class="py-3.5 px-4 align-middle whitespace-nowrap">Tomorrow &bull; 05:00 PM</td>
+                  <td class="py-3.5 px-4 align-middle whitespace-nowrap">
+                    <span
+                      class="px-2 py-0.5 rounded bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 font-bold text-[10px]">Under
+                      Review</span>
+                  </td>
+                  <td class="py-3.5 px-4 align-middle text-slate-500">Awaiting faculty signature and clinical ward
+                    stamping.</td>
+                  <td class="py-3.5 px-4 align-middle whitespace-nowrap text-right">
+                    <button type="button" class="text-xs font-bold text-sky-700 dark:text-sky-400 hover:underline">Edit
+                      Draft</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ====================================================================
+           TAB PANEL 4: EXAM RESULTS & SCORECARDS (DYNAMIC TAB)
+           ==================================================================== -->
+      <div id="tab-results" class="dashboard-tab-panel space-y-6 hidden">
+        <div
+          class="p-6 rounded-2xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 shadow-sm">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div>
+              <h2 class="font-heading font-extrabold text-2xl text-slate-900 dark:text-white">
+                University Examination Results &amp; Grade Cards
+              </h2>
+              <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
+                Official marks verified by The Tamil Nadu Dr. M.G.R. Medical University &amp; Apex Academic Board.
+              </p>
+            </div>
+            <button type="button"
+              class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-xs font-bold border border-slate-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-neutral-800 transition">
+              <svg class="w-4 h-4 text-rose-600" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 9V3.5L18.5 9H13z"></path>
+              </svg>
+              <span>Download Official Transcript (PDF)</span>
+            </button>
+          </div>
+
+          <!-- Academic Aggregate Highlights -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+            <div
+              class="p-4 rounded-xl bg-sky-50 dark:bg-sky-950/60 border border-sky-200 dark:border-sky-800/80 text-center">
+              <span class="text-[10px] uppercase font-bold text-sky-800 dark:text-sky-300 block">Semester VI
+                Aggregate</span>
+              <span class="font-heading font-extrabold text-2xl text-sky-700 dark:text-sky-400">88.4%</span>
+              <span class="text-[10px] text-sky-700 dark:text-sky-300 font-semibold block mt-0.5">First Class with
+                Distinction</span>
+            </div>
+            <div
+              class="p-4 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80 text-center">
+              <span class="text-[10px] uppercase font-bold text-emerald-800 dark:text-emerald-300 block">Simulation OSCE
+                Practical</span>
+              <span class="font-heading font-extrabold text-2xl text-emerald-600 dark:text-emerald-400">92.5 /
+                100</span>
+              <span class="text-[10px] text-emerald-700 dark:text-emerald-300 font-semibold block mt-0.5">Top 5%
+                In-State Rank</span>
+            </div>
+            <div
+              class="p-4 rounded-xl bg-purple-50 dark:bg-purple-950/60 border border-purple-200 dark:border-purple-800/80 text-center">
+              <span class="text-[10px] uppercase font-bold text-purple-800 dark:text-purple-300 block">Cumulative
+                GPA</span>
+              <span class="font-heading font-extrabold text-2xl text-purple-600 dark:text-purple-400">8.84 / 10</span>
+              <span class="text-[10px] text-purple-700 dark:text-purple-300 font-semibold block mt-0.5">Eligible for NHS
+                Direct Recruitment</span>
+            </div>
+          </div>
+
+          <!-- Grade Sheet Table -->
+          <!-- Mobile Cards (Visible on screens < 768px: 360, 375, 393, 412, 427, 440) -->
+          <div class="block md:hidden space-y-3">
+            <!-- Card 1 -->
+            <div
+              class="p-4 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-black space-y-3">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <span class="font-mono text-xs font-extrabold text-sky-700 dark:text-sky-400">NUR-401</span>
+                  <h4 class="font-bold text-sm text-slate-900 dark:text-white leading-snug">Medical-Surgical Critical
+                    Care Nursing II</h4>
+                </div>
+                <span
+                  class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400 shrink-0">PASS
+                  (O)</span>
+              </div>
+              <div class="grid grid-cols-2 gap-2 text-xs">
+                <div
+                  class="p-2 rounded-lg bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 flex justify-between">
+                  <span class="text-slate-500">Theory:</span>
+                  <span class="font-bold text-slate-900 dark:text-white">68 / 75</span>
+                </div>
+                <div
+                  class="p-2 rounded-lg bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 flex justify-between">
+                  <span class="text-slate-500">OSCE:</span>
+                  <span class="font-bold text-slate-900 dark:text-white">94 / 100</span>
+                </div>
+                <div
+                  class="p-2 rounded-lg bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 flex justify-between">
+                  <span class="text-slate-500">Internal:</span>
+                  <span class="font-bold text-slate-900 dark:text-white">24 / 25</span>
+                </div>
+                <div
+                  class="p-2 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 flex justify-between">
+                  <span class="font-bold text-emerald-700 dark:text-emerald-400">Total:</span>
+                  <span class="font-extrabold text-emerald-700 dark:text-emerald-400">186 / 200</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+              class="p-4 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-black space-y-3">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <span class="font-mono text-xs font-extrabold text-sky-700 dark:text-sky-400">NUR-402</span>
+                  <h4 class="font-bold text-sm text-slate-900 dark:text-white leading-snug">Obstetric &amp;
+                    Gynecological Nursing</h4>
+                </div>
+                <span
+                  class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400 shrink-0">PASS
+                  (A+)</span>
+              </div>
+              <div class="grid grid-cols-2 gap-2 text-xs">
+                <div
+                  class="p-2 rounded-lg bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 flex justify-between">
+                  <span class="text-slate-500">Theory:</span>
+                  <span class="font-bold text-slate-900 dark:text-white">65 / 75</span>
+                </div>
+                <div
+                  class="p-2 rounded-lg bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 flex justify-between">
+                  <span class="text-slate-500">OSCE:</span>
+                  <span class="font-bold text-slate-900 dark:text-white">91 / 100</span>
+                </div>
+                <div
+                  class="p-2 rounded-lg bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 flex justify-between">
+                  <span class="text-slate-500">Internal:</span>
+                  <span class="font-bold text-slate-900 dark:text-white">23 / 25</span>
+                </div>
+                <div
+                  class="p-2 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 flex justify-between">
+                  <span class="font-bold text-emerald-700 dark:text-emerald-400">Total:</span>
+                  <span class="font-extrabold text-emerald-700 dark:text-emerald-400">179 / 200</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+              class="p-4 rounded-xl border border-slate-200 dark:border-neutral-800 bg-slate-50 dark:bg-black space-y-3">
+              <div class="flex items-start justify-between gap-2">
+                <div>
+                  <span class="font-mono text-xs font-extrabold text-sky-700 dark:text-sky-400">NUR-403</span>
+                  <h4 class="font-bold text-sm text-slate-900 dark:text-white leading-snug">Community Health Nursing
+                    &amp; Epidemiology</h4>
+                </div>
+                <span
+                  class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400 shrink-0">PASS
+                  (A+)</span>
+              </div>
+              <div class="grid grid-cols-2 gap-2 text-xs">
+                <div
+                  class="p-2 rounded-lg bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 flex justify-between">
+                  <span class="text-slate-500">Theory:</span>
+                  <span class="font-bold text-slate-900 dark:text-white">62 / 75</span>
+                </div>
+                <div
+                  class="p-2 rounded-lg bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 flex justify-between">
+                  <span class="text-slate-500">OSCE:</span>
+                  <span class="font-bold text-slate-900 dark:text-white">89 / 100</span>
+                </div>
+                <div
+                  class="p-2 rounded-lg bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 flex justify-between">
+                  <span class="text-slate-500">Internal:</span>
+                  <span class="font-bold text-slate-900 dark:text-white">22 / 25</span>
+                </div>
+                <div
+                  class="p-2 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 flex justify-between">
+                  <span class="font-bold text-emerald-700 dark:text-emerald-400">Total:</span>
+                  <span class="font-extrabold text-emerald-700 dark:text-emerald-400">173 / 200</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Grade Sheet Table (Visible on md+: 768px, 960px, 1032px, 1280px) -->
+          <div class="hidden md:block overflow-x-auto w-full">
+            <table class="w-full min-w-[680px] text-left text-xs">
+              <thead
+                class="bg-slate-50 dark:bg-neutral-800 text-slate-500 dark:text-slate-400 uppercase font-bold text-[10px] tracking-wider border-b border-slate-200 dark:border-neutral-700">
+                <tr>
+                  <th scope="col" class="py-3 px-4 w-[12%] font-mono whitespace-nowrap">Course Code</th>
+                  <th scope="col" class="py-3 px-4 w-[34%]">Course Title</th>
+                  <th scope="col" class="py-3 px-3 w-[11%] text-center whitespace-nowrap">Theory (75)</th>
+                  <th scope="col" class="py-3 px-3 w-[13%] text-center whitespace-nowrap">OSCE (100)</th>
+                  <th scope="col" class="py-3 px-3 w-[10%] text-center whitespace-nowrap">Internal (25)</th>
+                  <th scope="col" class="py-3 px-3 w-[10%] text-center font-bold whitespace-nowrap">Total (200)</th>
+                  <th scope="col" class="py-3 px-4 w-[10%] whitespace-nowrap text-right">Result</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 dark:divide-neutral-800 text-slate-800 dark:text-slate-200">
+                <tr class="hover:bg-slate-50 dark:hover:bg-neutral-800/50 transition">
+                  <td
+                    class="py-3.5 px-4 font-mono font-bold align-middle whitespace-nowrap text-sky-700 dark:text-sky-400">
+                    NUR-401</td>
+                  <td class="py-3.5 px-4 font-bold text-slate-900 dark:text-white align-middle">Medical-Surgical
+                    Critical Care Nursing II</td>
+                  <td class="py-3.5 px-3 align-middle text-center whitespace-nowrap">68</td>
+                  <td class="py-3.5 px-3 align-middle text-center whitespace-nowrap">94</td>
+                  <td class="py-3.5 px-3 align-middle text-center whitespace-nowrap">24</td>
+                  <td
+                    class="py-3.5 px-3 align-middle text-center font-extrabold text-slate-900 dark:text-white whitespace-nowrap">
+                    186</td>
+                  <td class="py-3.5 px-4 align-middle whitespace-nowrap text-right">
+                    <span
+                      class="px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold text-[10px]">PASS
+                      (O)</span>
+                  </td>
+                </tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-neutral-800/50 transition">
+                  <td
+                    class="py-3.5 px-4 font-mono font-bold align-middle whitespace-nowrap text-sky-700 dark:text-sky-400">
+                    NUR-402</td>
+                  <td class="py-3.5 px-4 font-bold text-slate-900 dark:text-white align-middle">Obstetric &amp;
+                    Gynecological Nursing</td>
+                  <td class="py-3.5 px-3 align-middle text-center whitespace-nowrap">65</td>
+                  <td class="py-3.5 px-3 align-middle text-center whitespace-nowrap">91</td>
+                  <td class="py-3.5 px-3 align-middle text-center whitespace-nowrap">23</td>
+                  <td
+                    class="py-3.5 px-3 align-middle text-center font-extrabold text-slate-900 dark:text-white whitespace-nowrap">
+                    179</td>
+                  <td class="py-3.5 px-4 align-middle whitespace-nowrap text-right">
+                    <span
+                      class="px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold text-[10px]">PASS
+                      (A+)</span>
+                  </td>
+                </tr>
+                <tr class="hover:bg-slate-50 dark:hover:bg-neutral-800/50 transition">
+                  <td
+                    class="py-3.5 px-4 font-mono font-bold align-middle whitespace-nowrap text-sky-700 dark:text-sky-400">
+                    NUR-403</td>
+                  <td class="py-3.5 px-4 font-bold text-slate-900 dark:text-white align-middle">Community Health Nursing
+                    &amp; Epidemiology</td>
+                  <td class="py-3.5 px-3 align-middle text-center whitespace-nowrap">62</td>
+                  <td class="py-3.5 px-3 align-middle text-center whitespace-nowrap">89</td>
+                  <td class="py-3.5 px-3 align-middle text-center whitespace-nowrap">22</td>
+                  <td
+                    class="py-3.5 px-3 align-middle text-center font-extrabold text-slate-900 dark:text-white whitespace-nowrap">
+                    173</td>
+                  <td class="py-3.5 px-4 align-middle whitespace-nowrap text-right">
+                    <span
+                      class="px-2 py-0.5 rounded bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold text-[10px]">PASS
+                      (A+)</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- ====================================================================
+           TAB PANEL 5: BATCH SCHEDULES & ROSTER (DYNAMIC TAB)
+           ==================================================================== -->
+      <div id="tab-schedules" class="dashboard-tab-panel space-y-6 hidden">
+        <div
+          class="p-6 rounded-2xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 shadow-sm">
+          <h2 class="font-heading font-extrabold text-2xl text-slate-900 dark:text-white mb-2">
+            Weekly Hospital Ward Duty Roster &amp; Lab Timetable
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mb-6">
+            Clinical duty rotations shift weekly to ensure comprehensive bedside exposure across all ICU and surgical
+            theatres.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="p-5 rounded-xl bg-slate-50 dark:bg-black border border-slate-200 dark:border-neutral-800">
+              <span
+                class="text-[10px] font-bold uppercase tracking-wider text-sky-700 dark:text-sky-400 block mb-1">Morning
+                Shift</span>
+              <div class="font-heading font-bold text-base text-slate-900 dark:text-white mb-2">08:00 AM &ndash; 02:00
+                PM</div>
+              <p class="text-xs text-slate-600 dark:text-slate-400 mb-2">Bedside clinical rounds, drug administering,
+                and patient vital monitoring.</p>
+              <span class="text-xs font-semibold text-emerald-600">Location: Apollo Hospital Ward 4</span>
+            </div>
+
+            <div class="p-5 rounded-xl bg-slate-50 dark:bg-black border border-slate-200 dark:border-neutral-800">
+              <span
+                class="text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 block mb-1">Simulation
+                Lab</span>
+              <div class="font-heading font-bold text-base text-slate-900 dark:text-white mb-2">02:30 PM &ndash; 05:00
+                PM</div>
+              <p class="text-xs text-slate-600 dark:text-slate-400 mb-2">Gaumard HAL Pediatric simulator &amp; 3D
+                Anatomage digital table workshop.</p>
+              <span class="text-xs font-semibold text-sky-600">Location: Apex Central Lab Hub</span>
+            </div>
+
+            <div class="p-5 rounded-xl bg-slate-50 dark:bg-black border border-slate-200 dark:border-neutral-800">
+              <span
+                class="text-[10px] font-bold uppercase tracking-wider text-rose-600 dark:text-rose-400 block mb-1">Night
+                Rotation</span>
+              <div class="font-heading font-bold text-base text-slate-900 dark:text-white mb-2">08:00 PM &ndash; 08:00
+                AM</div>
+              <p class="text-xs text-slate-600 dark:text-slate-400 mb-2">Casualty triage resuscitation, emergency ICU
+                telemetry, and trauma support.</p>
+              <span class="text-xs font-semibold text-rose-600">Next Scheduled: Saturday Night</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ====================================================================
+           TAB PANEL 6: STUDENT PROFILE (DYNAMIC TAB)
+           ==================================================================== -->
+      <div id="tab-profile" class="dashboard-tab-panel space-y-6 hidden">
+        <div
+          class="p-6 sm:p-8 rounded-2xl bg-white dark:bg-neutral-900 border border-slate-200 dark:border-neutral-800 shadow-sm">
+          <div class="flex items-center gap-4 pb-6 border-b border-slate-200 dark:border-neutral-800 mb-6">
+            <div
+              class="w-16 h-16 rounded-full bg-sky-700 text-white flex items-center justify-center font-heading font-extrabold text-xl shadow">
+              PS
+            </div>
+            <div>
+              <h2 class="font-heading font-extrabold text-xl text-slate-900 dark:text-white">
+                Priya Sundaram
+              </h2>
+              <p class="text-xs text-slate-600 dark:text-slate-400">
+                Roll No: <span class="font-mono font-bold text-slate-900 dark:text-white">APX-2023-NUR042</span> &bull;
+                B.Sc. Nursing (Final Year)
+              </p>
+              <span
+                class="inline-flex items-center gap-1.5 mt-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-400">
+                <span>&#10003;</span>
+                <span>Active University Enrollment Verified</span>
+              </span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+            <div class="space-y-3">
+              <div>
+                <span class="text-slate-500 block uppercase font-bold text-[10px]">University Registration Number</span>
+                <span class="font-mono font-bold text-slate-900 dark:text-white text-sm">TN-MGR-2023-7729104</span>
+              </div>
+              <div>
+                <span class="text-slate-500 block uppercase font-bold text-[10px]">Registered Institutional Email</span>
+                <span class="font-bold text-slate-900 dark:text-white">priya.sundaram@apex.edu.in</span>
+              </div>
+              <div>
+                <span class="text-slate-500 block uppercase font-bold text-[10px]">Contact Mobile</span>
+                <span class="font-bold text-slate-900 dark:text-white">+91 98400 12345</span>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              <div>
+                <span class="text-slate-500 block uppercase font-bold text-[10px]">Assigned Clinical Mentor</span>
+                <span class="font-bold text-slate-900 dark:text-white">Dr. Sarah V., MD (Head of Critical Care)</span>
+              </div>
+              <div>
+                <span class="text-slate-500 block uppercase font-bold text-[10px]">Hospital Partner Affiliation</span>
+                <span class="font-bold text-slate-900 dark:text-white">Apollo Hospitals Main Campus, Chennai</span>
+              </div>
+              <div>
+                <span class="text-slate-500 block uppercase font-bold text-[10px]">INC Registration Eligibility</span>
+                <span class="font-bold text-emerald-600 dark:text-emerald-400">100% Eligible upon Semester VIII
+                  completion</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- Global Core JavaScript -->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
