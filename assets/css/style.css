@@ -35,6 +35,7 @@
 
 html {
   font-family: var(--font-body);
+  font-size: 16px;
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -48,6 +49,9 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 /* ==========================================================================
@@ -459,6 +463,35 @@ h6,
   letter-spacing: -0.02em;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.25rem; }
+h2 { font-size: 1.875rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1.125rem; }
+h6 { font-size: 1rem; }
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  font-weight: 600;
+}
+
 /* ==========================================================================
    BRANDED PRELOADER
    ========================================================================== */
@@ -740,6 +773,13 @@ html.dark .dropdown-item:hover {
 
 .mobile-menu-drawer.open {
   transform: translateX(0);
+}
+
+@media (min-width: 1024px) {
+  .mobile-menu-drawer,
+  .mobile-backdrop {
+    display: none !important;
+  }
 }
 
 /* Mobile Accordion & Navigation Links */

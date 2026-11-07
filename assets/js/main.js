@@ -97,7 +97,11 @@ function initDirection() {
   applyDirection(storedDir);
 
   dirToggleBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      closeAllDropdowns();
+      if (window.innerWidth >= 1024) closeMobileMenu();
       const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
       const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
       applyDirection(newDir);
@@ -184,10 +188,7 @@ function initMobileMenu() {
   };
 
   const closeDrawer = () => {
-    drawer.classList.remove('open');
-    backdrop.classList.remove('open');
-    document.body.style.overflow = '';
-    if (openBtn) openBtn.setAttribute('aria-expanded', 'false');
+    closeMobileMenu();
     closeAllMobileAccordions();
   };
 
@@ -207,6 +208,17 @@ function initMobileMenu() {
       closeDrawer();
     });
   });
+}
+
+function closeMobileMenu() {
+  const drawer = document.getElementById('mobile-menu-drawer');
+  const backdrop = document.getElementById('mobile-menu-backdrop');
+  const openBtn = document.getElementById('mobile-menu-open-btn');
+
+  if (drawer) drawer.classList.remove('open');
+  if (backdrop) backdrop.classList.remove('open');
+  document.body.style.overflow = '';
+  if (openBtn) openBtn.setAttribute('aria-expanded', 'false');
 }
 
 function closeAllMobileAccordions() {

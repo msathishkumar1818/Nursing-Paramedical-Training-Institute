@@ -183,6 +183,16 @@ img, svg, video, canvas, audio, iframe, embed, object {
 /* ==========================================================================
    DASHBOARD FIXED LAYOUT & MOBILE DRAWER
    ========================================================================== */
+.dashboard-header-controls {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .dashboard-header-controls {
+    display: flex;
+  }
+}
+
 body:has(#dashboard-sidebar) {
   height: 100vh;
   overflow: hidden;
@@ -283,5 +293,4 @@ body:has(#dashboard-sidebar) {
     display: block !important;
   }
 }
-
 

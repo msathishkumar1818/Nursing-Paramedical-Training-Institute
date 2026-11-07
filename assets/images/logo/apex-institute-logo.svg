@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">Apex Nursing and Paramedical Training Institute</title>
+  <circle cx="64" cy="64" r="60" fill="#f3f9ff" stroke="#07559b" stroke-width="5"/>
+  <circle cx="64" cy="64" r="51" fill="none" stroke="#17a9c5" stroke-width="2"/>
+  <path d="M56 20h16v10h10v16H72v10H56V46H46V30h10z" fill="#df2838"/>
+  <path d="M25 67c14-8 27-6 39 3 12-9 25-11 39-3v31c-14-6-27-5-39 5-12-10-25-11-39-5z" fill="#fff" stroke="#07559b" stroke-width="4" stroke-linejoin="round"/>
+  <path d="M64 70v33M34 73c10-4 19-2 27 3M94 73c-10-4-19-2-27 3M34 85c10-3 19-1 27 4M94 85c-10-3-19-1-27 4" fill="none" stroke="#07559b" stroke-width="3" stroke-linecap="round"/>
+  <path d="M39 59c3-8 9-12 17-13m33 13c-3-8-9-12-17-13" fill="none" stroke="#17a9c5" stroke-width="3" stroke-linecap="round"/>
+</svg>
